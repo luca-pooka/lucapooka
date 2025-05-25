@@ -1,0 +1,12 @@
+#grid {
+    background-color: black;
+    width: 320px;
+    height: 640px;
+    display: grid;
+    grid-template: repeat(20, 30px) / repeat(10, 30px);
+    gap: 2px;
+    border: 3px solid white;
+}
+.tile {
+    background-color: gray;
+}

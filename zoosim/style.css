@@ -1,0 +1,87 @@
+body {
+    background-image: linear-gradient(to right, white, rgb(150, 150, 150));
+    text-align: center;
+    margin-bottom: 100px;
+}
+h1 {
+    background-color: white;
+    padding: 10px;
+    border-radius: 20px;
+}
+footer {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.75);
+    justify-content: center;
+}
+footer h2 {
+    margin-right: 10px;
+}
+button {
+    border-radius: 10px;
+    cursor: pointer;
+}
+div {
+    margin: 0 auto;
+}
+.animal-div, .for-sale {
+    border: 2px solid black;
+    width: fit-content;
+    border-radius: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    background-color: rgb(135, 135, 135);
+    color: white;
+    display: inline-block;
+    margin: 5px;
+    text-align: center;
+}
+.for-sale {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+#inlineBlock {
+    display: inline-block;
+}
+#marginRight {
+    margin-right: 5px;
+}
+.chicken {
+    background-color: wheat;
+    color: black;
+}
+.duck {
+    background-color: rgb(0, 128, 117);
+}
+.pig {
+    background-color: pink;
+    color: black;
+}
+.cow {
+    background-color: white;
+    color: black;
+}
+.monkey {
+    background-color: darkgoldenrod;
+}
+.giraffe {
+    background-color: yellow;
+    color: black;
+}
+.gorilla {
+    background-color: silver;
+    color: black;
+}
+.elephant {
+    background-color: gray;
+}
+.dragon {
+    background-color: darkgreen;
+}
+.unicorn {
+    background-image: linear-gradient(to right, pink, yellow, lightblue, pink);
+    color: black;
+}
