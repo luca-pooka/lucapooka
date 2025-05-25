@@ -1,0 +1,58 @@
+#apartments {
+    background-color: white;
+    width: 67vw;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap-reverse;
+}
+.apartment {
+    background-color: gray;
+    border: 2px solid black;
+    width: 5vw;
+    height: 4vw;
+    margin: 1%;
+}
+@media screen and (max-width: 1000px) {
+     #apartments {
+        width: 62vw;
+     }
+     .apartment {
+        font-size: 14px;
+        width: 10vw;
+        height: 8vw;
+     }
+}
+.person {
+    cursor: pointer;
+}
+button {
+    width: fit-content;
+    height: 30px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+details span {
+    display: inline-block;
+    margin-top: 10px;
+}
+.person {
+    background-color: aliceblue;
+}
+.hungry {
+    background-color: orange;
+}
+.interior {
+    background-color: magenta;
+}
+.friend {
+    background-color: greenyellow;
+}
+.love {
+    background-color: pink;
+}
+.sad {
+    background-color: darkblue;
+}
+#delete {
+    background-color: lightpink;
+}

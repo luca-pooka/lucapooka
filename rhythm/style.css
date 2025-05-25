@@ -1,0 +1,13 @@
+#select {
+    display: flex;
+    flex-direction: column;
+}
+#game p {
+    font-size: 80px;
+}
+#game p span {
+    display: inline-block;
+}
+.flipped {
+    transform: scaleX(-1);
+}

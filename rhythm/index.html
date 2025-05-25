@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" lang="en"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rhythm Fighter - LucaPooka</title>
+    <link rel="stylesheet" href="../basic.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="../mii.png">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7936100714719113" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1>Rhythm Fighter</h1>
+    <h2>0</h2>
+    <div id="select">
+        <label for="choose">Level Select</label>
+        <input id="choose" type="range" min="0" max="2" value="0">
+        <p>Level <span id="level">1</span></p>
+        <button id="play">Play</button>
+    </div>
+    <div id="game">
+        <p>
+            <span id="left-enemies"></span>
+            <span id="player">🧑</span>
+            <span id="right-enemies" class="flipped"></span>
+        </p>
+    </div>
+    <footer>
+        <h2>Made by <a href="../">LucaPooka</a></h2>
+        <img src="../mii.png" alt="My Mii" height="50px" width="50px">
+    </footer>
+    <p id="footer-toggle">⌄</p>
+    <script src="script.js"></script>
+    <script src="../basic.js"></script>
+</body>
+</html>

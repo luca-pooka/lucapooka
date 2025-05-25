@@ -1,0 +1,15 @@
+export const interiors = [
+    {name: "Basic Red", color: "red", textColor: "black", cost: 65, description: "A fiery red backdrop."},
+    {name: "Basic Orange", color: "orange", textColor: "black", cost: 55, description: "A wonderful orange backdrop."},
+    {name: "Basic Yellow", color: "yellow", textColor: "black", cost: 60, description: "A light yellow backdrop."},
+    {name: "Basic Green", color: "green", textColor: "white", cost: 60, description: "A plain green backdrop."},
+    {name: "Light Blue", color: "lightblue", textColor: "black", cost: 65, description: "A calming light blue backdrop."},
+    {name: "Basic Blue", color: "blue", textColor: "white", cost: 65, description: "A deep blue backdrop."},
+    {name: "Dark Purple", color: "purple", textColor: "white", cost: 55, description: "A dark eggplanty purple backdrop."},
+    {name: "Basic Pink", color: "pink", textColor: "black", cost: 70, description: "A nice pink backdrop."},
+    {name: "Basic White", color: "white", textColor: "black", cost: 45, description: "A simple white backdrop (which hurts my eyes)."},
+    {name: "Basic Black", color: "black", textColor: "white", cost: 50, description: "An edgy black backdrop."},
+    {name: "Rainbow", color: "linear-gradient(to right, red, orange, yellow, green, blue, purple)", textColor: "black", cost: 150, description: "A backdrop with <s>most</s> of the colors of the rainbow!"},
+    {name: "Fire", color: "linear-gradient(to right, red, orange, yellow)", textColor: "black", cost: 110, description: "A backdrop with some hot colors!"},
+    {name: "Ice", color: "linear-gradient(to right, lightblue, blue, purple)", textColor: "white", cost: 110, description: "A backdrop with some chilly colors!"},
+];

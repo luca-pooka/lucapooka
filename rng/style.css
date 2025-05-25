@@ -1,0 +1,15 @@
+#min, #max, #place {
+    width: 50px;
+}
+button {
+    width: 80px;
+    height: 40px;
+    font-size: medium;
+    border-radius: 40px;
+    background-image: linear-gradient(to right, white, darkgray);
+    cursor: pointer;
+    transition: transform 500ms;
+}
+button:hover {
+    transform: scale(1.05);
+}

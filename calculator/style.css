@@ -1,0 +1,35 @@
+#calculator {
+    display: grid;
+    grid-template: repeat(4, 100px) / repeat(4, 100px);
+    padding-right: 50px;
+}
+.button {
+    background-image: linear-gradient(lightgray, darkgray);
+    margin: 3px;
+    border: 3px solid black;
+    border-radius: 40px;
+    font-size: 50px;
+    cursor: pointer;
+    transition: transform 0.25s ease;
+}
+.button:hover {
+    background-image: linear-gradient(rgb(190, 190, 190), rgb(130, 130, 130));
+    transform: scale(1.05);
+}
+.button:hover:focus {
+    background-image: linear-gradient(rgb(170, 170, 170), rgb(110, 110, 110));
+    transform: scale(1.025);
+}
+#numbers {
+    display: flex;
+}
+#numbers p {
+    margin: 10px;
+    font-size: 65px;
+}
+#sub-calc {
+    padding-left: 50px;
+    display: grid;
+    grid-template-columns: 300px repeat(2, 100px);
+    grid-template-rows: 100px;
+}

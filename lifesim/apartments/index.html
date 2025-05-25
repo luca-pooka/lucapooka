@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" lang="en"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life Simulator Apartments - LucaPooka</title>
+    <link rel="stylesheet" href="../../basic.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="../../mii.png">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7936100714719113" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1>Apartments</h1>
+    <div id="apartments"></div>
+    <div id="creator-button-holder"></div>
+    <p id="apartment-details" style="visibility: hidden;"><span id="apartment-owner"></span>'s apartment</p>
+    <button onclick="window.location.href = '../'">Go back</button>
+    <br>
+    <button id="delete">Delete Person</button>
+    <div id="people-to-delete"></div>
+    <br>
+    <details>
+        <summary>Problem Key</summary>
+        <br>
+        You can tell what problem someone has by just looking at the color of their apartment.
+        <br>
+        <span class="hungry">Orange: Hungry</span>
+        <br>
+        <span class="interior">Purple: Wants a new interior</span>
+        <br>
+        <span class="friend">Green: Wants to make a friend</span>
+        <br>
+        <span class="love">Pink: In love</span>
+        <br>
+        <span class="sad" style="color: white;">Dark Blue: Sad</span>
+    </details>
+    <footer>
+        <h2>Made by <a href="../../">LucaPooka</a></h2>
+        <img src="../../mii.png" alt="My Mii" height="50px" width="50px">
+    </footer>
+    <p id="footer-toggle">⌄</p>
+    <script type="module" src="script.js"></script>
+    <script src="../../basic.js"></script>
+</body>
+</html>

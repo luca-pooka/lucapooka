@@ -1,0 +1,25 @@
+button {
+    width: fit-content;
+    height: 30px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+table, th, td {
+    border: 1px solid black;
+}
+table {
+    background-color: white;
+    width: 90%;
+    border-collapse: collapse;
+}
+@media screen and (min-width: 1300px) {
+    table {
+        width: 65%;
+    }
+}
+th, td {
+    padding: 2%;
+}
+tr:nth-child(even) {
+    background-color: lightgray;
+}

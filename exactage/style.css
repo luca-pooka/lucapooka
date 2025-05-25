@@ -1,0 +1,12 @@
+button {
+    width: 100px;
+    height: 45px;
+    font-size: larger;
+    border-radius: 50px;
+    background-image: linear-gradient(to right, white, darkgray);
+    cursor: pointer;
+    transition: transform 0.65s ease;
+}
+button:hover {
+    transform: scale(1.1);
+}

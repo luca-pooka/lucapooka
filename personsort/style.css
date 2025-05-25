@@ -1,0 +1,46 @@
+#grid {
+    background-color: gray;
+    padding: 10px;
+    display: grid;
+    grid-template: repeat(10, 60px) / repeat(10, 60px);
+    border-radius: 30px;
+}
+.tile {
+    color: white;
+    background-color: black;
+    border: 2px solid white;
+    margin: 3px;
+}
+.filled {
+    background-color: white;
+    cursor: pointer;
+}
+.fixed {
+    border: 5px solid black;
+}
+@media screen and (max-width: 650px) {
+    #grid {
+        padding: 5px;
+        grid-template: repeat(10, 30px) / repeat(10, 30px);
+        border-radius: 15px;
+    }
+    .tile {
+        border-width: 1px;
+        margin: 2px;
+    }
+    .fixed {
+        border-width: 3px;
+    }
+}
+.red {
+    background-color: red;
+}
+.blue {
+    background-color: blue;
+}
+.yellow {
+    background-color: yellow;
+}
+.green {
+    background-color: green;
+}
