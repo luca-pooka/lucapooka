@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" lang="en"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stair Stepper - LucaPooka</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../basic.css">
+    <link rel="icon" href="../mii.png">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7936100714719113" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1>Stair Stepper</h1>
+    <div id="inputs">
+        <label for="player-count">Players</label>
+        <input id="player-count" type="range" min="1" max="4" value="1">
+        <p id="player-count-show">1 player</p>
+        <label for="step-count">Steps</label>
+        <input id="step-count" type="range" min="5" max="50" value="15">
+        <p id="step-count-show">15 steps</p>
+        <p>(10-15 steps are recommended)</p>
+        <h1>this game breaks a lot just warning you</h1>
+        <button onclick="startGame()">Start Game</button>
+        <h4>How this game works:</h4>
+        <p>Four people choose an amount to move up the steps.<br>If you choose the same amount as someone else, neither of you move.<br>Get past the steps to win!</p>
+    </div>
+    <div id="stairs"></div>
+    <footer>
+        <h2>Made by <a href="../">LucaPooka</a></h2>
+        <img src="../mii.png" alt="My Mii" height="50px" width="50px">
+    </footer>
+    <p id="footer-toggle">⌄</p>
+    <script src="script.js"></script>
+    <script src="../basic.js"></script>
+</body>
+</html>

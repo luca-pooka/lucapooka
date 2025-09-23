@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" lang="en"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Character Creator - LucaPooka</title>
+        <link rel="stylesheet" href="../../basic.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="../../mii.png">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7936100714719113" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <h1>Create Your Person</h1>
+        <fieldset>
+            <label for="first">First Name*:</label>
+            <input placeholder="First name" id="first" autocomplete="off" class="required">
+            <br>
+            <label for="last">Last Name*:</label>
+            <input placeholder="Last name" id="last" autocomplete="off" class="required">
+            <br>
+            <label for="nickname">Nickname:</label>
+            <input placeholder="Nickname" id="nickname" autocomplete="off">
+            <br>
+            <label for="bday">Birthday:</label>
+            <input type="date" id="bday">
+            <br>
+            <select id="gender" class="required">
+                <option disabled selected>Gender*</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+            <br>
+            <select id="relation">
+                <option disabled selected>Relation to You</option>
+                <option disabled>(this doesn't</option>
+                <option disabled>affect gameplay)</option>
+                <option value="you">You</option>
+                <option value="sibling">Sibling</option>
+                <option value="parent">Parent</option>
+                <option value="related">Related in Other Way</option>
+                <option value="bestie">Good Friend</option>
+                <option value="other">Other</option>
+            </select>
+            <br>
+            <fieldset class="required">
+                <legend>Attracted to</legend>
+                <label>
+                    <input type="checkbox" id="male" value="male"> Male
+                </label>
+                <label>
+                    <input type="checkbox" id="female" value="female"> Female
+                </label>
+                <label>
+                    <input type="checkbox" id="other" value="other"> Other
+                </label>
+            </fieldset>
+            <br>
+            <button id="submit-button" onclick="submit()">Submit</button>
+            <br>
+            <p>Anything with<b>*</b>and<span style="color: red;">red borders</span>are required.</p>
+        </fieldset>
+        <button id="back">Go back without saving this person</button>
+        <p id="feedback"></p>
+        <footer>
+            <h2>Made by <a href="../../">LucaPooka</a></h2>
+            <img src="../../mii.png" alt="My Mii" height="50px" width="50px">
+        </footer>
+        <p id="footer-toggle">⌄</p>
+        <script type="module" src="script.js"></script>
+        <script src="../../basic.js"></script>
+    </body>
+</html>

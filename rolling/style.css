@@ -1,0 +1,68 @@
+h3 {
+    padding: 10px;
+    border-radius: 20px;
+}
+p, summary {
+    padding: 5px;
+    border-radius: 10px;
+}
+#roll {
+    background-image: linear-gradient(to right, white, lightgray);
+    font-size: 75px;
+    padding: 20px;
+    border-radius: 25px;
+    transition: transform 500ms;
+}
+#roll:hover {
+    transform: scale(1.1);
+}
+#delete {
+    background-color: pink;
+    padding: 10px;
+    border-radius: 20px;
+}
+#save {
+    margin-top: 10px;
+}
+#shop, #save, .item {
+    background-color: darkgray;
+    width: max-content;
+    padding: 5px 20px 20px 20px;
+    margin: 10px;
+    border: 3px solid black;
+    border-radius: 20px;
+}
+#shop button, #save button {
+    border-radius: 10px;
+    font-size: large;
+    padding: 10px;
+    margin: 5px;
+}
+#roll-gotten {
+    font-size: 50px;
+}
+/*#items button {
+    margin: auto 20px auto 5px
+}
+#items p, #items button {
+    display: inline;
+    position: relative;
+    top: 20px;
+}*/
+#roll-gotten, #items p, #items button, #catalogue p {
+    /*background-clip: text;
+    -webkit-text-fill-color: transparent;*/
+    padding: 10px;
+    border-radius: 15px;
+}
+button, #roll {
+    cursor: pointer;
+}
+@keyframes change-size {
+    0% { transform: scale(0.1) }
+    20% { transform: scale(1.2) }
+    100% { transform: scale(1) }
+}
+.change-size {
+    animation: change-size 1.5s;
+}

@@ -1,0 +1,13 @@
+button {
+    width: fit-content;
+    height: 30px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+select {
+    margin: 20px;
+}
+#percent {
+    font-size: 50px;
+    transition: transform 100ms ease;
+}

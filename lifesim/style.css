@@ -1,0 +1,95 @@
+html, body {
+    height: 110%; /* do this to fix the height value in #game */
+}
+/* do THESE to fix not being able to delete save data at bottom */
+@media screen and (max-height: 600px) {
+    html, body {
+        height: 130%;
+    }
+}
+@media screen and (max-height: 400px) {
+    html, body {
+        height: 140%;
+    }
+}
+#game {
+    background-image: linear-gradient(aliceblue, white);
+    position: relative;
+    width: 45vw;
+    height: 45vw;
+}
+.building {
+    cursor: pointer;
+    border: 2px solid black;
+}
+.building p {
+    top: -75%;
+}
+.building h2 {
+    left: 30%;
+    font-size: xx-large;
+}
+@media screen and (max-width: 1000px) {
+    .building h2 {
+        font-size: 2vw;
+    }
+}
+#game *, .building * {
+    position: absolute;
+}
+#apartments {
+    background-color: lightblue;
+    width: 20%;
+    height: 15%;
+    left: 40%;
+    bottom: 40%;
+}
+#creator {
+    background-color: rgb(100, 90, 80);
+    width: 11%;
+    height: 11%;
+    left: 65%;
+    bottom: 40%;
+}
+#food {
+    background-color: orange;
+    width: 15%;
+    height: 10%;
+    left: 10%;
+    bottom: 50%;
+}
+#interior {
+    background-color: gray;
+    width: 15%;
+    height: 13%;
+    left: 55%;
+    bottom: 70%;
+}
+#compatibility {
+    background-color: pink;
+    width: 10%;
+    height: 13%;
+    left: 75%;
+    bottom: 15%;
+}
+button {
+    width: fit-content;
+    height: 30px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+#money {
+    background-color: lightgreen;
+    border: 1px solid black;
+    bottom: 0%;
+    right: 0%;
+    
+}
+@media screen and (min-width: 1000px) {
+    #money {
+        font-size: xx-large;
+    }
+}
+#delete {
+    background-color: lightpink;
+}

@@ -1,0 +1,32 @@
+#board {
+    display: grid;
+    grid-template: repeat(8, 90px) / repeat(8, 90px);
+    text-align: center;
+    background-color: black;
+}
+.tile {
+    background-color: darkolivegreen;
+    margin: 5px;
+    border-color: white;
+    border-width: 3px;
+    border-style: solid;
+}
+@media screen and (max-width: 750px) {
+    #board {
+        grid-template: repeat(8, 10vw) / repeat(8, 10vw);
+    }
+    img {
+        width: 8vw;
+        height: 8vw;
+    }
+    .tile {
+        margin: 2px;
+        border-width: 2px;
+    }
+}
+.piece, .clickable {
+    cursor: pointer;
+}
+.clickable {
+    background-color: gray;
+}

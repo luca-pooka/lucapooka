@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" lang="en"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List - LucaPooka</title>
+    <link rel="stylesheet" href="../basic.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="../mii.png">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7936100714719113" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1>To-Do List</h1>
+    <table>
+        <tr>
+            <th>Item</th>
+            <th>Completion</th>
+        </tr>
+    </table>
+    <br>
+    <button onclick="showOverlay()">Add New Item</button>
+    <div id="overlay">
+        <div id="popup">
+            <h2>Add Item</h2>
+            <input placeholder="Text" id="item-text">
+            <br>
+            <br>
+            <button onclick="cancel()">Cancel</button>
+            <button onclick="submit()" id="submit">Submit</button>
+        </div>
+    </div>
+    <footer>
+        <h2>Made by <a href="../">LucaPooka</a></h2>
+        <img src="../mii.png" alt="My Mii" height="50px" width="50px">
+    </footer>
+    <p id="footer-toggle">⌄</p>
+    <script src="script.js"></script>
+    <script src="../basic.js"></script>
+</body>
+</html>

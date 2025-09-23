@@ -1,0 +1,49 @@
+h1 {
+    color: black;
+}
+button {
+    width: fit-content;
+    height: 30px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+#level-holder {
+    display: flex;
+    align-items: center;
+}
+#level-holder h2 {
+    margin: 10px;
+}
+#buttons button {
+    transition: transform 0.5s ease;
+    width: 50px;
+    height: 40px;
+    border-radius: 18px;
+    font-size: x-large;
+}
+#buttons button:hover {
+    transform: scale(1.1);
+}
+#extra {
+    padding: 10px;
+}
+table, th, td {
+    border: 1px solid black;
+}
+table {
+    color: black;
+    background-color: white;
+    width: 90%;
+    border-collapse: collapse;
+}
+@media screen and (min-width: 1300px) {
+    table {
+        width: 65%;
+    }
+}
+th, td {
+    padding: 2%;
+}
+tr:nth-child(even) {
+    background-color: lightgray;
+}

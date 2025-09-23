@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" lang="en"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator - LucaPooka</title>
+    <link rel="stylesheet" href="../basic.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="../mii.png">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7936100714719113" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1>Calculator</h1>
+    <div id="numbers">
+        <p id="number1">0</p>
+        <p id="symbol">?</p>
+        <p id="number2">0</p>
+        <p>=</p>
+        <p id="answer">0</p>
+    </div>
+    <div id="sub-calc">
+        <button class="button" onclick="clear()">C</button>
+        <button class="button" onclick="putSymbol('+')">+</button>
+        <button class="button" onclick="backspace()">⌫</button>
+    </div>
+    <div id="calculator">
+        <button class="button" onclick="putNumber('9')">9</button>
+        <button class="button" onclick="putNumber('8')">8</button>
+        <button class="button" onclick="putNumber('7')">7</button>
+        <button class="button" onclick="putSymbol('-')">-</button>
+        <button class="button" onclick="putNumber('6')">6</button>
+        <button class="button" onclick="putNumber('5')">5</button>
+        <button class="button" onclick="putNumber('4')">4</button>
+        <button class="button" onclick="putSymbol('*')">*</button>
+        <button class="button" onclick="putNumber('3')">3</button>
+        <button class="button" onclick="putNumber('2')">2</button>
+        <button class="button" onclick="putNumber('1')">1</button>
+        <button class="button" onclick="putSymbol('/')">/</button>
+        <button class="button" onclick="addDecimal()">.</button>
+        <button class="button" onclick="putNumber('0')">0</button>
+        <button class="button" onclick="getOpposite()">-/+</button>
+        <button class="button" onclick="equals()">=</button>
+    </div>
+    <footer>
+        <h2>Made by <a href="../">LucaPooka</a></h2>
+        <img src="../mii.png" alt="My Mii" height="50px" width="50px">
+    </footer>
+    <p id="footer-toggle">⌄</p>
+    <script src="script.js"></script>
+    <script src="../basic.js"></script>
+</body>
+</html>

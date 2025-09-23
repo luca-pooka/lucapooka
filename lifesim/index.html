@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" lang="en"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life Simulator - LucaPooka</title>
+    <link rel="stylesheet" href="../basic.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="../mii.png">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7936100714719113" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1>Life Simulator</h1>
+    <div id="game">
+        <div id="apartments" class="building" onclick="window.location.href='apartments/'" onpointerenter="apartments.children[0].style.visibility = 'visible'" onpointerleave="apartments.children[0].style.visibility = 'hidden'">
+            <p style="visibility: hidden;">Apartment Building</p>
+            <h2>🏠</h2>
+        </div>
+        <div id="creator" class="building" onclick="window.location.href='creator/'" onpointerenter="creator.children[0].style.visibility = 'visible'" onpointerleave="creator.children[0].style.visibility = 'hidden'">
+            <p style="visibility: hidden;">Person Creator</p>
+            <h2>🧑</h2>
+        </div>
+        <div id="food" class="building" onclick="window.location.href='food/'" onpointerenter="food.children[0].style.visibility = 'visible'" onpointerleave="food.children[0].style.visibility = 'hidden'">
+            <p style="visibility: hidden;">Food Store</p>
+            <h2>🍔</h2>
+        </div>
+        <div id="interior" class="building" onclick="window.location.href='interior/'" onpointerenter="interior.children[0].style.visibility = 'visible'" onpointerleave="interior.children[0].style.visibility = 'hidden'">
+            <p style="visibility: hidden;">Interior Store</p>
+            <h2>🏢</h2>
+        </div>
+        <div id="compatibility" class="building" onclick="window.location.href='compatibility/'" onpointerenter="compatibility.children[0].style.visibility = 'visible'" onpointerleave="compatibility.children[0].style.visibility = 'hidden'">
+            <p style="visibility: hidden;">Compatibility Tester</p>
+            <h2>💘</h2>
+        </div>
+        <p id="money">Money: $0</p>
+    </div>
+    <p id="info"></p>
+    <button id="delete">Delete your save data</button>
+    <button id="debug">Show all data (for debugging)</button>
+    <footer>
+        <h2>Made by <a href="../">LucaPooka</a></h2>
+        <img src="../mii.png" alt="My Mii" height="50px" width="50px">
+    </footer>
+    <p id="footer-toggle">⌄</p>
+    <script type="module" src="script.js"></script>
+    <script src="../basic.js"></script>
+</body>
+</html>

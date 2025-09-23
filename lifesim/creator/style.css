@@ -1,0 +1,17 @@
+fieldset {
+    margin: 5px;
+}
+fieldset * {
+    margin: 5px;
+    width: fit-content;
+    display: inline-block;
+}
+button {
+    width: fit-content;
+    height: 30px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+.required {
+    border: 1px solid red;
+}

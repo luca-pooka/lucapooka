@@ -1,0 +1,31 @@
+#grid {
+    display: grid;
+    grid-template: repeat(6, 75px) / repeat(7, 75px);
+    gap: 3px;
+}
+@media screen and (max-width: 900px) {
+    #grid {
+        grid-template: repeat(6, 10vw) / repeat(7, 10vw);
+    }
+}
+.red {
+    background-color: red;
+    opacity: 0.5;
+}
+.yellow {
+    background-color: yellow;
+    opacity: 0.35;
+}
+.tile {
+    border-radius: 5px;
+    cursor: pointer;
+}
+.tile:not(.red):not(.yellow) {
+    background-color: gray;
+}
+.fixed {
+    opacity: 1;
+}
+.end {
+    cursor: not-allowed;
+}
