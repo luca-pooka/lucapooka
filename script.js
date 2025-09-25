@@ -45,7 +45,7 @@ tags.forEach(tag => {
     input.type = "checkbox";
     input.id = tag.n.toLocaleLowerCase();
     input.value = tag.n;
-    if (tag.n == "Mobile-friendly" && navigator.maxTouchPoints > 0) {
+    if (tag.n == "Mobile-friendly" && /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
         input.checked = true;
     }
     checkboxes.appendChild(label);
