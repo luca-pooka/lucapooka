@@ -2,7 +2,7 @@ const apps = [
     {name: "Watamelon", tags: ["Unity", "Game", "Single Player", "The Best"], link: "watamelon/", info: "Combine fruits to get all the way to a watamelon and get a high score!"},
     {name: "Pong", tags: ["Unity", "Game", "Multiplayer", "Co-op", "Versus", "The Best"], link: "pong/", info: "Go against another player in the classic game of hitting a ball back and forth!"},
     {name: "Life Simulator", tags: ["Game", "Single Player", "The Best", "Mobile-friendly"], link: "lifesim/", info: "Create people you know in real life, solve their problems, and care for them."},
-    {name: "Puzzle Platform", tags: ["Unity", "Game", "Single Player", "Beta", "New"], link: "puzzleplatform/", info: "Progress through levels in this 2D platformer puzzle game."},
+    {name: "Puzzle Platform", tags: ["Unity", "Game", "Single Player", "New"], link: "puzzleplatform/", info: "Progress through levels in this 2D platformer puzzle game."},
     {name: "Snake", tags: ["Game", "Single Player"], link: "snake/", info: "Move around collecting fruit to grow and get a high score in this classic game."},
     {name: "Rolling", tags: ["Game", "Single Player", "Mobile-friendly"], link: "rolling/", info: "Roll and roll and try to get something good."},
     {name: "Blackjack", tags: ["Game", "Single Player", "Mobile-friendly"], link: "blackjack/", info: "Bet your money and try to make it big without going over 21."},

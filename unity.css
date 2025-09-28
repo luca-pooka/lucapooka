@@ -4,7 +4,6 @@ details {
     padding: 10px;
     border-radius: 10px;
 }
-#high-score {
-    position: fixed;
-    bottom: 100px;
+ul {
+    text-align: left;
 }
