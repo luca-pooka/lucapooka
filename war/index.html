@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" lang="en"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>War - LucaPooka</title>
+    <link rel="stylesheet" href="../basic.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="../mii.png">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7936100714719113" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1>War</h1>
+    <h2 id="round">Round 1</h2>
+    <br>
+    <div id="title">
+        <button onclick="start()">Start Game</button>
+        <br> <br>
+        <details>
+            <summary>Rules</summary>
+            <p>Both players will choose between four moves each round, choosing from:</p>
+            <ul>
+                <li><kbd>🔫</kbd> (shoot) — Shoots the other player</li>
+                <li><kbd>🪞</kbd> (reflect) — If the other player shoots, this reflects the bullet back at them</li>
+                <li><kbd>🔁</kbd> (reload) — Reloads your gun; gives you one ammo</li>
+                <li><kbd>🛡️</kbd> (shield) — Blocks a player's bullet</li>
+            </ul>
+            <p>Both <kbd>🔫</kbd> and <kbd>🪞</kbd> cost one piece of ammo to use.</p>
+        </details>
+    </div>
+    <div id="absolute">
+        <div id="sections">
+            <div id="left-section" class="section"></div>
+            <div id="right-section" class="section"></div>
+        </div>
+        <div id="p1" class="player">
+            <p class="emoji"><span style="transform: scaleX(-1);">🤔</span></p>
+            <div class="player-options">
+                <kbd>W</kbd>
+                <kbd>A</kbd>
+                <kbd>S</kbd>
+                <kbd>D</kbd>
+            </div>
+            <p class="ammo">Ammo: 0</p>
+        </div>
+        <div id="countdown">3</div>
+        <button id="replay" onclick="start()">Replay</button>
+        <div id="p2" class="player">
+            <p class="emoji">🤔</p>
+            <div class="player-options">
+                <kbd>↑</kbd>
+                <kbd>←</kbd>
+                <kbd>↓</kbd>
+                <kbd>→</kbd>
+            </div>
+            <p class="ammo">Ammo: 0</p>
+        </div>
+    </div>
+    <footer>
+        <h2>Made by <a href="../">LucaPooka</a></h2>
+        <img src="../mii.png" alt="My Mii" height="50px" width="50px">
+    </footer>
+    <p id="footer-toggle">⌄</p>
+    <script src="script.js"></script>
+    <script src="../basic.js"></script>
+</body>
+</html>

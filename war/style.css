@@ -1,0 +1,236 @@
+:root {
+    --section-animation-forward-time: 4500ms;
+    --section-animation-back-time: 6000ms;
+}
+#round {
+    display: none;
+}
+ul {
+    text-align: left;
+}
+button {
+    width: 150px;
+    height: 50px;
+    font-size: x-large;
+    border-radius: 30px;
+    cursor: pointer;
+}
+#absolute {
+    display: none;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+#countdown {
+    position: fixed;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 5em;
+    font-weight: bold;
+    transition: font-size 0.25s;
+}
+#replay {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.shake-s {
+    animation: shake-small 0.5s;
+}
+.shake-m {
+    animation: shake-med 0.5s;
+}
+.shake-l {
+    animation: shake-large 0.5s;
+}
+.shake-xl {
+    animation: shake-extra-large 0.5s;
+}
+.player {
+    position: fixed;
+    bottom: 30%;
+}
+#p1 {
+    left: 25%;
+}
+#p2 {
+    right: 25%;
+}
+.emoji {
+    margin-bottom: 100px;
+    font-size: 5em;
+}
+.player-options {
+    display: grid;
+    grid-template-areas: 
+        ". a ."
+        "b c d";
+    width: 183px;
+    height: 120px;
+}
+.ammo {
+    font-size: larger;
+}
+kbd {
+    background-color: #eeeeee;
+    border-radius: 3px;
+    border: 1px solid #b4b4b4;
+    box-shadow:
+        0 1px 1px rgb(0 0 0 / 0.2),
+        0 2px 0 0 rgb(255 255 255 / 0.7) inset;
+    padding: 2px 4px;
+}
+.player-options kbd {
+    height: 50px;
+    width: 50px;
+    display: inline-block;
+    font-size: 300%;
+}
+.player-options kbd.off {
+    background-color: #c4c4c4;
+    border-radius: 3px;
+    border: 1px solid #b4b4b4;
+    box-shadow:
+        0 1px 1px rgb(0 0 0 / 0.2),
+        0 2px 0 0 rgb(215 215 215 / 0.7) inset;
+}
+.section {
+    position: fixed;
+    height: 100%;
+    width: 50%;
+    z-index: -1;
+    transition: clip-path 0.1s;
+}
+#left-section {
+    left: 0;
+    background-image: linear-gradient(to right, white, rgb(212.5, 212.5, 212.5));
+    clip-path: inset(0 100% 0 0);
+}
+#right-section {
+    right: 0;
+    background-image: linear-gradient(to right, rgb(212.5, 212.5, 212.5), rgb(170, 170, 170));
+    clip-path: inset(0 0 0 100%);
+}
+#left-section.animating-forward {
+    animation: fade-left-to-right var(--section-animation-forward-time);
+    clip-path: inset(0);
+}
+#right-section.animating-forward {
+    animation: fade-right-to-left var(--section-animation-forward-time);
+    clip-path: inset(0);
+}
+#left-section.animating-back {
+    animation: fade-back-to-left var(--section-animation-back-time);
+}
+#right-section.animating-back {
+    animation: fade-back-to-right var(--section-animation-back-time);
+}
+@keyframes fade-left-to-right {
+    0% {
+        clip-path: inset(0 100% 0 0);
+    }
+    20%, 30% {
+        clip-path: inset(0 75% 0 0);
+    }
+    45%, 55% {
+        clip-path: inset(0 50% 0 0);
+    }
+    70%, 80% {
+        clip-path: inset(0 25% 0 0);
+    }
+    100% {
+        clip-path: inset(0);
+    }
+}
+@keyframes fade-right-to-left {
+    0% {
+        clip-path: inset(0 0 0 100%);
+    }
+    20%, 30% {
+        clip-path: inset(0 0 0 75%);
+    }
+    45%, 55% {
+        clip-path: inset(0 0 0 50%);
+    }
+    70%, 80% {
+        clip-path: inset(0 0 0 25%);
+    }
+    100% {
+        clip-path: inset(0);
+    }
+}
+
+@keyframes fade-back-to-left {
+    0% {
+        clip-path: inset(0);
+    }
+    100% {
+        clip-path: inset(0 100% 0 0);
+    }
+}
+@keyframes fade-back-to-right {
+    0% {
+        clip-path: inset(0);
+    }
+    100% {
+        clip-path: inset(0 0 0 100%);
+    }
+}
+@keyframes shake-small {
+  0%, 100% {
+    transform: translate(-50%, -50%);
+  }
+  20%, 60% {
+    transform: translate(calc(-50% - 2px), -50%);
+  }
+  40%, 80% {
+    transform: translate(calc(-50% + 2px), -50%);
+  }
+}
+@keyframes shake-med {
+  0%, 100% {
+    transform: translate(-50%, -50%);
+  }
+  20%, 60% {
+    transform: translate(calc(-50% + 3px), -50%);
+  }
+  40%, 80% {
+    transform: translate(calc(-50% - 3px), -50%);
+  }
+}
+@keyframes shake-large {
+  0%, 100% {
+    transform: translate(-50%, -50%);
+  }
+  20%, 60% {
+    transform: translate(calc(-50% - 5px), -50%);
+  }
+  40%, 80% {
+    transform: translate(calc(-50% + 5px), -50%);
+  }
+}
+@keyframes shake-extra-large {
+  0%, 100% {
+    transform: translate(-50%, -50%);
+  }
+  20%, 60% {
+    transform: translate(calc(-50% + 7px), -50%);
+  }
+  40%, 80% {
+    transform: translate(calc(-50% - 7px), -50%);
+  }
+}
+.player-options :nth-child(1) {
+    grid-area: a;
+}
+.player-options :nth-child(2) {
+    grid-area: b;
+}
+.player-options :nth-child(3) {
+    grid-area: c;
+}
+.player-options :nth-child(4) {
+    grid-area: d;
+}
