@@ -9,9 +9,10 @@ ul {
     text-align: left;
 }
 button {
-    width: 150px;
+    width: 200px;
     height: 50px;
     font-size: x-large;
+    margin: 0 10px;
     border-radius: 30px;
     cursor: pointer;
 }
@@ -30,9 +31,9 @@ button {
     font-weight: bold;
     transition: font-size 0.25s;
 }
-#replay {
+#replay-div {
     position: fixed;
-    top: 40%;
+    top: 43%;
     left: 50%;
     transform: translate(-50%, -50%);
 }

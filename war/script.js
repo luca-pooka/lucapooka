@@ -1,12 +1,13 @@
 const keys = {
     "w": ["shoot", "<p style='transform: scaleX(-1)'>🔫😠</span>", "p1"], "a": ["reflect", "😉🪞", "p1"], "s": ["reload", "🔁😬", "p1"], "d": ["shield", "😥🛡️", "p1"],
-    "arrowup": ["shoot", "🔫😠", "p2"], "arrowleft": ["reflect", "🪞😉", "p2"], "arrowdown": ["reload", "😬🔁", "p2"], "arrowright": ["mirror", "🛡️😥", "p2"]
+    "arrowup": ["shoot", "🔫😠", "p2"], "arrowleft": ["reflect", "🪞😉", "p2"], "arrowdown": ["reload", "😬🔁", "p2"], "arrowright": ["shield", "🛡️😥", "p2"],
+    "shoot": ["shoot", "🔫🤖", "p2"], "reflect": ["reflect", "🪞🤖", "p2"], "reload": ["reload", "🤖🔁", "p2"], "shield": ["shield", "🛡️🤖", "p2"]
 };
 let roundNumber = 0;
 const round = document.getElementById("round");
 const absolute = document.getElementById("absolute");
 const countdown = document.getElementById("countdown");
-const replay = document.getElementById("replay");
+const replay = document.getElementById("replay-div");
 const sections = absolute.querySelector("#sections");
 const leftSection = sections.querySelector("#left-section");
 const rightSection = sections.querySelector("#right-section");
@@ -14,6 +15,7 @@ const p1Emoji = document.getElementById("p1").querySelector(".emoji");
 const p2Emoji = document.getElementById("p2").querySelector(".emoji");
 let speed = 1250;
 let waitSpeed = 1500;
+let vsBot = false;
 let p1Ammo = 0;
 let p2Ammo = 0;
 let p1ChoiceList;
@@ -23,7 +25,9 @@ let p2Choice;
 let tieSpamming = false;
 let p1SpamPoints = 0;
 let p2SpamPoints = 0;
-function start() {
+let botIntervalSpam;
+function start(vsBotParam) {
+    vsBot = vsBotParam;
     roundNumber = 0;
     updateAmmo(1, -p1Ammo);
     updateAmmo(2, -p2Ammo);
@@ -36,23 +40,15 @@ function start() {
         console.log(event.key);
         if (tieSpamming) {
             if (key === "w") {
-                p1SpamPoints++;
-                leftSection.style.clipPath = `inset(0 ${100 - p1SpamPoints * 5}% 0 0)`;
-                if (p1SpamPoints >= 20) {
-                    gameEnd(1);
-                }
-            } else if (key === "arrowup") {
-                p2SpamPoints++;
-                rightSection.style.clipPath = `inset(0 0 0 ${100 - p2SpamPoints * 5}%)`;
-                if (p2SpamPoints >= 20) {
-                    gameEnd(2);
-                }
+                increaseSpamPoint(1);
+            } else if (!vsBot && key === "arrowup") {
+                increaseSpamPoint(2);
             }
         } else if (key in keys) {
             if (keys[key][2] === "p1") {
                 p1ChoiceList = keys[key];
                 p1Choice = p1ChoiceList[0];
-            } else if (keys[key][2] === "p2") {
+            } else if (!vsBot && keys[key][2] === "p2") {
                 p2ChoiceList = keys[key];
                 p2Choice = p2ChoiceList[0];
             }
@@ -66,7 +62,7 @@ function newRound() {
     increaseRound();
     setCountdownSpeed();
     p1Emoji.innerHTML = "<span style='transform: scaleX(-1);'>🤔</span>";
-    p2Emoji.innerHTML = "🤔";
+    p2Emoji.innerHTML = vsBot ? "🤖" : "🤔";
     countdown.className = null;
     p1ChoiceList = [null, "😦", null];
     p1Choice = null;
@@ -118,6 +114,34 @@ function newRound() {
                 setTimeout(() => {
                     countdownNumber(countdown, "0", "8em", "shake-xl");
                     setTimeout(() => {
+                        // bot code
+                        function choose(move) {
+                            console.log(move);
+                            console.log(keys[move]);
+                            p2ChoiceList = keys[move];
+                            p2Choice = p2ChoiceList[0];
+                        }
+                        if (vsBot) {
+                            if (p1Ammo === 0 && p2Ammo === 0) {
+                                choose("reload");
+                            } else if (p1Ammo > 0 && p2Ammo === 0) {
+                                if (Math.random() < 0.5) {
+                                    choose("reload");
+                                } else {
+                                    choose("shield");
+                                }
+                            } else if (p1Ammo === 0 && p2Ammo > 0) {
+                                if (Math.random() < 0.5) {
+                                    choose("reload");
+                                } else {
+                                    choose("shoot");
+                                }
+                            } else if (p2Ammo > 0) {
+                                const options = ["shoot", "reflect", "reload", "shield"];
+                                choose(options[Math.floor(Math.random() * 4)]);
+                            }
+                        }
+
                         if (((p1Choice === "shoot" || p1Choice === "reflect") && p1Ammo < 1) || p1Choice === undefined) {
                             p1ChoiceList = [null, "😦", null];
                             p1Choice = null;
@@ -171,6 +195,7 @@ function newRound() {
                             countdown.style.fontSize = "3em";
                             countdown.innerHTML = "War!<br>Spam to win!";
                             tieSpamming = true;
+                            botIntervalSpam = setInterval(() => increaseSpamPoint(2), Math.random() * 100 + 150);
                             return;
                         }
                         // if either player chooses shield, nothing happens to them
@@ -197,15 +222,17 @@ function newRound() {
 }
 function gameEnd(playerNumber) {
     for (const section of sections.getElementsByClassName("section")) {
+        section.classList.remove("animating-forward");
         section.style.clipPath = "inset(0)";
     };
     tieSpamming = false;
     p1SpamPoints = 0;
     p2SpamPoints = 0;
+    clearInterval(botIntervalSpam);
     countdown.style.display = "block";
     countdown.style.fontSize = "3em";
-    countdown.innerHTML = `Player ${playerNumber} wins!`;
-    replay.style.display = "inline-block";
+    countdown.innerHTML = vsBot && playerNumber === 2 ? "The bot wins..." : `Player ${playerNumber} wins!`;
+    replay.style.display = "block";
 }
 function countdownNumber(countdown, text, fontSize, animationName) {
     countdown.innerHTML = text;
@@ -215,6 +242,21 @@ function countdownNumber(countdown, text, fontSize, animationName) {
 function increaseRound() {
     roundNumber++;
     round.innerHTML = `Round ${roundNumber}`;
+}
+function increaseSpamPoint(playerNumber) {
+    if (playerNumber === 1) {
+        p1SpamPoints++;
+        leftSection.style.clipPath = `inset(0 ${100 - p1SpamPoints * 5}% 0 0)`;
+        if (p1SpamPoints >= 20) {
+            gameEnd(1);
+        }
+    } else if (playerNumber === 2) {
+        p2SpamPoints++;
+        rightSection.style.clipPath = `inset(0 0 0 ${100 - p2SpamPoints * 5}%)`;
+        if (p2SpamPoints >= 20) {
+            gameEnd(2);
+        }
+    }
 }
 function updateAmmo(playerNumber, change) {
     if (playerNumber === 1) {
