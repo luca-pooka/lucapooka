@@ -22,45 +22,50 @@ const apps = [
     //{name: "Rhythm Fighter", tags: ["Game", "Single Player", "Mobile-friendly", "Beta", "New"], link: "rhythm/", info: "this actually does not work as a game rn so maybe don't play it"}
 ]
 const tags = [
-    {n: "Unity", t: "Something made in the Unity engine."},
-    {n: "Game", t: "A game to play for fun."},
-    {n: "Utility", t: "A utility to help you or give you cool information."},
-    {n: "Single Player", t: "Something that can only be played by one person at once."},
-    {n: "Multiplayer", t: "Something that can be played by multiple (2-4) people at once."},
-    {n: "Versus", t: "A multiplayer game where the players face off against each other."},
-    {n: "Co-op", t: "A multiplayer game where the players work together to accomplish something."},
-    {n: "The Best", t: "My personal favorite games where I think I've done the best on and are the most fun."},
-    {n: "Mobile-friendly", t: "Things that work not just on computers but on mobile devices as well."},
-    {n: "Beta", t: "Things that are unfinished or may not fully work properly."}, 
-    {n: "New", t: "New things."}
+    {n: "Unity", t: "Something made in the Unity engine.", src: "unity.png"},
+    {n: "Game", t: "A game to play for fun.", src: "game.png"},
+    {n: "Utility", t: "A utility to help you or give you cool information.", src: "utility.png"},
+    {n: "Single Player", t: "Something that can only be played by one person at once.", src: "singleplayer.png"},
+    {n: "Multiplayer", t: "Something that can be played by multiple (2-4) people at once.", src: "multiplayer.png"},
+    {n: "Versus", t: "A multiplayer game where the players face off against each other.", src: "versus.png"},
+    {n: "Co-op", t: "A multiplayer game where the players work together to accomplish something.", src: "coop.png"},
+    {n: "The Best", t: "My personal favorite games where I think I've done the best on and are the most fun.", src: "best.png"},
+    {n: "Mobile-friendly", t: "Things that work not just on computers but on mobile devices as well.", src: "mobile.png"},
+    {n: "Beta", t: "Things that are unfinished or may not fully work properly.", src: "beta.png"}, 
+    {n: "New", t: "New things.", src: "new.png"}
 ];
 const appsDiv = document.getElementById("apps");
 const checkboxes = document.getElementById("checkboxes");
-let checkedApps = apps;
+let selectedApps = apps;
 tags.forEach(tag => {
-    const label = document.createElement("label");
-    label.innerHTML = tag.n;
-    label.htmlFor = tag.n.toLocaleLowerCase();
-    label.title = tag.t;
-    const input = document.createElement("input");
-    input.type = "checkbox";
-    input.id = tag.n.toLocaleLowerCase();
-    input.value = tag.n;
-    if (tag.n == "Mobile-friendly" && /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-        input.checked = true;
+    const img = document.createElement("img");
+    img.src = `icons/default/${tag.src}`;
+    img.alt = tag.n;
+    img.title = `${tag.n} Tag:\n${tag.t}`;
+    img.className = "tag-img";
+    img.onclick = () => {
+        if (img.classList.contains("selected")) {
+            img.src = img.src.replace("selected", "default");
+            img.classList.remove("selected");
+        } else {
+            img.src = img.src.replace("default", "selected");
+            img.classList.add("selected");
+        }
+        createApps();
     }
-    checkboxes.appendChild(label);
-    checkboxes.appendChild(input);
+    if (tag.n === "Mobile-friendly" && /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        img.src = img.src.replace("default", "selected");
+        img.classList.add("selected");
+    }
+    checkboxes.appendChild(img);
 });
-const inputElements = document.querySelectorAll("input");
+//
 function createApps() {
     const conditions = [];
-    inputElements.forEach(input => {
-        if (input.checked) {
-            conditions.push(input.value);
-        }
+    document.querySelectorAll(".selected").forEach(element => {
+        conditions.push(element.alt);
     });
-    checkedApps = apps.filter(app => {
+    selectedApps = apps.filter(app => {
         return conditions.every(item => app.tags.includes(item));
     });
     // delete apps
@@ -68,19 +73,21 @@ function createApps() {
         appsDiv.removeChild(appsDiv.children[0]);
     }
     // create apps
-    checkedApps.forEach(app => {
+    selectedApps.forEach(app => {
         const square = document.createElement("div");
         square.className = "app";
         const title = document.createElement("h2");
         title.innerHTML = app.name;
         square.appendChild(title);
-        const tags = document.createElement("h5");
-        tags.innerHTML = app.tags.join(", ");
-        const index = tags.innerHTML.search("New");
-        if (index != -1) {
-            tags.innerHTML = tags.innerHTML.slice(0, index) + "<span style='color: gold'>" + tags.innerHTML.slice(index) + "</span>";
-        }
-        square.appendChild(tags);
+        const tagsDiv = document.createElement("div");
+        app.tags.forEach(tag => {
+            const img = document.createElement("img");
+            img.src = `icons/default/${tags.find(t => t.n === tag).src}`;
+            img.alt = tag;
+            img.className = "tag-app";
+            tagsDiv.appendChild(img);
+        });
+        square.appendChild(tagsDiv);
         const description = document.createElement("p");
         description.innerHTML = app.info;
         square.appendChild(description);
@@ -91,5 +98,4 @@ function createApps() {
         appsDiv.appendChild(square);
     });
 }
-inputElements.forEach(input => input.onclick = () => createApps()); // when a checkbox is changed the apps are recreated
 createApps();
