@@ -23,4 +23,18 @@ app.get("/data", (req, res) => {
   });
 });
 
-app.listen(3000, () => console.log("✅ Server running on http://localhost:3000"));
+app.post("/add", (req, res) => {
+  const { name, words } = req.body;
+  const sql = "INSERT INTO my_table (name, words) VALUES (?, ?)";
+  
+  pool.query(sql, [name, words], (err, results) => {
+    if (err) {
+      console.error(err);
+      res.status(500).send("Error inserting data");
+    } else {
+      res.json({ message: "Data added successfully!" });
+    }
+  });
+});
+
+app.listen(3000, () => console.log("Server running on http://localhost:3000"));

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" lang="en"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat - LucaPooka</title>
+    <link rel="stylesheet" href="../basic.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="../mii.png">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7936100714719113" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1>Chat</h1>
+    <fieldset>
+        <label for="name">Input name:</label>
+        <input type="text" id="name" placeholder="Name">
+        <p>This is what will be seen by others, make it whatever you'd like!</p>
+    </fieldset>
+    <div id="chat">
+        <textarea id="all-chats" readonly></textarea>
+        <div id="text-input">
+            <input type="text" id="words" placeholder="Text" autocomplete="off">
+            <button id="send" onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+    <footer>
+        <h2>Made by <a href="../">LucaPooka</a></h2>
+        <img src="../mii.png" alt="My Mii" height="50px" width="50px">
+    </footer>
+    <p id="footer-toggle">⌄</p>
+    <script src="script.js"></script>
+    <script src="../basic.js"></script>
+</body>
+</html>
