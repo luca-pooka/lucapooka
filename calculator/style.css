@@ -21,9 +21,6 @@
     transform: scale(1.025);
 }
 #numbers {
-    display: flex;
-}
-#numbers p {
     margin: 10px;
     font-size: 65px;
 }

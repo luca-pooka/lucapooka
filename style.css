@@ -14,10 +14,10 @@ h1 {
 }
 .app {
     background-color: gray;
-    width: 275px;
-    max-height: 100px;
+    width: 325px;
+    max-height: 125px;
     padding: 20px;
-    margin: 10px;
+    margin: 15px;
     border: 3px solid black;
     border-radius: 30px;
     overflow: hidden;
@@ -26,8 +26,11 @@ h1 {
 @media not ((any-hover: none) and (any-pointer: coarse)) {
     .app:hover {
         transform: scale(1.025);
-        max-height: 250px;
+        max-height: 275px;
     }
+}
+.app h2 {
+    font-size: 28px;
 }
 .app a {
     color: white;
@@ -70,16 +73,13 @@ h1 {
     transition: width 0.5s, height 0.5s;
 }
 .tag-img:hover, .tag-img.selected {
-    width: 60px;
-    height: 60px;
+    width: 58px;
+    height: 58px;
 }
 .tag-app {
     width: 35px;
     height: 35px;
     margin: 0 5px;
-}
-input {
-    margin-right: 10px;
 }
 #privacy {
     background-color: white;

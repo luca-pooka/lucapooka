@@ -11,30 +11,24 @@
 </head>
 <body>
     <h1>Calculator</h1>
-    <div id="numbers">
-        <p id="number1">0</p>
-        <p id="symbol">?</p>
-        <p id="number2">0</p>
-        <p>=</p>
-        <p id="answer">0</p>
-    </div>
+    <p id="numbers"><span id="number1">0</span> <span id="symbol">?</span> <span id="number2">0</span> = <span id="answer">0</span></p>
     <div id="sub-calc">
         <button class="button" onclick="clear()">C</button>
         <button class="button" onclick="putSymbol('+')">+</button>
         <button class="button" onclick="backspace()">⌫</button>
     </div>
     <div id="calculator">
-        <button class="button" onclick="putNumber('9')">9</button>
-        <button class="button" onclick="putNumber('8')">8</button>
         <button class="button" onclick="putNumber('7')">7</button>
+        <button class="button" onclick="putNumber('8')">8</button>
+        <button class="button" onclick="putNumber('9')">9</button>
         <button class="button" onclick="putSymbol('-')">-</button>
-        <button class="button" onclick="putNumber('6')">6</button>
-        <button class="button" onclick="putNumber('5')">5</button>
         <button class="button" onclick="putNumber('4')">4</button>
+        <button class="button" onclick="putNumber('5')">5</button>
+        <button class="button" onclick="putNumber('6')">6</button>
         <button class="button" onclick="putSymbol('*')">*</button>
-        <button class="button" onclick="putNumber('3')">3</button>
-        <button class="button" onclick="putNumber('2')">2</button>
         <button class="button" onclick="putNumber('1')">1</button>
+        <button class="button" onclick="putNumber('2')">2</button>
+        <button class="button" onclick="putNumber('3')">3</button>
         <button class="button" onclick="putSymbol('/')">/</button>
         <button class="button" onclick="addDecimal()">.</button>
         <button class="button" onclick="putNumber('0')">0</button>
