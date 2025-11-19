@@ -39,10 +39,8 @@ tr:nth-child(even) {
     align-items: center;
     z-index: 9999;
 }
-
-/* Popup window */
 #popup {
-  background-image: linear-gradient(to right, darkgray, lightgray, white);
+  background: var(--bg);
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);

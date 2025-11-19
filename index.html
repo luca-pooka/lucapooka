@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LucaPooka Hub</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="basic.css">
     <link rel="icon" href="mii.png">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7936100714719113" crossorigin="anonymous"></script>
 </head>
@@ -12,7 +13,7 @@
     <h1>Welcome to the LucaPooka Hub!</h1>
     <h2>Games and more, all originally made by me.</h2>
     <img src="mii.png" alt="Image of my (Luca's) Mii" height="85px" width="85px" title="it's mii!">
-    <br><br>
+    <br>
     <div id="checkboxes">
         <h3>Tags:</h3>
         <h4>(hover over the icons for info, click on them to sort by)</h4>
@@ -20,6 +21,20 @@
     <div id="apps"></div>
     <a id="privacy" href="privacypolicy.html">Privacy Policy</a>
     <p>New projects will be added from time to time <s>when I get ideas</s>.</p>
+    <p id="theme-change">Change site theme</p>
+    <div id="overlay">
+        <div id="popup">
+            <h2>Change Site Theme</h2>
+            <table id="themes-table">
+                <tr>
+                    <th>Theme</th>
+                    <th>Apply</th>
+                </tr>
+            </table>
+            <br>
+            <button id="theme-change-cancel">Back</button>
+        </div>
+    </div>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7936100714719113"
         crossorigin="anonymous"></script>
     <!-- Horizontal -->
@@ -32,6 +47,7 @@
     <script>
         (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
+    <script type="module" src="basic.js"></script>
 </body>
 </html>

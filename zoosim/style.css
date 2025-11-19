@@ -1,33 +1,9 @@
-body {
-    background-image: linear-gradient(to right, white, rgb(150, 150, 150));
-    text-align: center;
-    margin-bottom: 100px;
-}
-h1 {
-    background-color: white;
-    padding: 10px;
-    border-radius: 20px;
-}
-footer {
-    display: flex;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.75);
-    justify-content: center;
-}
-footer h2 {
-    margin-right: 10px;
-}
 button {
     border-radius: 10px;
     cursor: pointer;
 }
-div {
-    margin: 0 auto;
-}
 .animal-div, .for-sale {
-    border: 2px solid black;
+    border: 2px solid var(--text);
     width: fit-content;
     border-radius: 15px;
     padding-left: 5px;

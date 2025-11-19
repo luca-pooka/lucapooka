@@ -1,3 +1,5 @@
+import { themes } from "./themes.js";
+console.log(themes);
 const apps = [
     {name: "Watamelon", tags: ["Unity", "Game", "Single Player", "The Best"], link: "watamelon/", info: "Combine fruits to get all the way to a watamelon and get a high score!"},
     {name: "Puzzle Platform", tags: ["Unity", "Game", "Single Player", "The Best"], link: "puzzleplatform/", info: "Progress through levels in this 2D platformer puzzle game."},
@@ -61,7 +63,6 @@ tags.forEach(tag => {
     }
     checkboxes.appendChild(img);
 });
-//
 function createApps() {
     const conditions = [];
     document.querySelectorAll(".selected").forEach(element => {
@@ -100,4 +101,30 @@ function createApps() {
         appsDiv.appendChild(square);
     });
 }
+document.getElementById("theme-change").onclick = () => overlay.style.display = "flex";
+document.getElementById("theme-change-cancel").onclick = () => overlay.style.display = "none";
+const body = document.querySelector("body");
+const overlay = document.getElementById("overlay");
+const themesTable = document.getElementById("themes-table");
+themes.forEach(theme => {
+    const tr = document.createElement("tr");
+    const name = document.createElement("td");
+    name.innerHTML = theme.name;
+    name.style.background = theme.bg;
+    name.style.color = theme.text;
+    const apply = document.createElement("td");
+    const applyButton = document.createElement("button");
+    applyButton.innerHTML = "Apply theme";
+    applyButton.onclick = () => {
+        localStorage.setItem("theme", JSON.stringify(theme.id));
+        const doc = document.documentElement;
+        doc.style.setProperty("--bg", theme.bg);
+        doc.style.setProperty("--text", theme.text);
+        doc.style.setProperty("--accent", theme.accent);
+    }
+    apply.appendChild(applyButton);
+    tr.appendChild(name);
+    tr.appendChild(apply);
+    themesTable.appendChild(tr);
+});
 createApps();
