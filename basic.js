@@ -5,7 +5,7 @@ const doc = document.documentElement;
 doc.style.setProperty("--bg", theme.bg);
 doc.style.setProperty("--text", theme.text);
 doc.style.setProperty("--accent", theme.accent);
-console.log(theme);
+doc.style.setProperty("--box-shadow", theme.text === "white" ? "rgba(255, 255, 255, 0.2)" : "rgba(0, 0, 0, 0.2)");
 
 const toggle = document.getElementById("footer-toggle");
 const footer = document.querySelector("footer");

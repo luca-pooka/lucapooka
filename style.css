@@ -1,3 +1,6 @@
+h1 {
+    z-index: 1;
+}
 #apps {
     display: flex;
     flex-wrap: wrap;
@@ -12,6 +15,7 @@
     margin: 15px;
     border: 3px solid var(--text);
     border-radius: 30px;
+    box-shadow: 0 4px 8px var(--box-shadow);
     overflow: hidden;
     transition: transform 250ms, max-height 800ms;
 }
@@ -56,6 +60,7 @@
     color: black;
     padding: 10px;
     border: 3px solid var(--text);
+    box-shadow: 0 4px 8px var(--box-shadow);
     border-radius: 20px;
 }
 .tag-img {
@@ -79,22 +84,28 @@ button {
     border-radius: 20px;
     cursor: pointer;
 }
-#theme-change {
+#theme-change, #privacy {
     background: var(--accent);
     color: var(--text);
     position: fixed;
-    bottom: 0;
-    left: 50%;
-    padding: 15px 50px;
+    top: 0;
+    padding: 15px;
     margin: 0;
-    /*clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);*/
-    border-radius: 15px 15px 0 0;
-    border: 2px solid black;
-    cursor: pointer;
-    transform: translate(-50%);
+    border-radius: 0 0 15px 15px;
+    border: 2px solid var(--text);
+    border-width: 0 2px 2px 2px;
     transition: font-size 500ms;
+    cursor: pointer;
 }
-#theme-change:hover {
+#theme-change {
+    left: 20%;
+    transform: translate(-50%);
+}
+#privacy {
+    right: 20%;
+    transform: translate(50%);
+}
+#theme-change:hover, #privacy:hover {
     font-size: 110%;
 }
 #overlay {
@@ -115,20 +126,6 @@ button {
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     width: 30%;
-}
-#privacy {
-    background: var(--accent);
-    color: var(--text);
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    padding: 15px;
-    border-radius: 10px 0 0 0;
-    border: 2px solid var(--text);
-    transition: font-size 500ms;
-}
-#privacy:hover {
-    font-size: 110%;
 }
 table, th, td {
     border: 2px solid black;

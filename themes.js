@@ -1,6 +1,7 @@
 export const themes = [
     {id: 1, name: "Default", bg: "linear-gradient(to right, white, rgb(150, 150, 150))", text: "black", accent: "white"},
     {id: 3, name: "Light", bg: "white", text: "black", accent: "lightgray"},
+    {id: 8, name: "Medium Dark", bg: "rgb(60, 60, 90)", text: "white", accent: "gray"},
     {id: 2, name: "Night Dark", bg: "rgb(10, 10, 30)", text: "white", accent: "gray"},
     {id: 4, name: "Extra Dark", bg: "black", text: "white", accent: "gray"},
     {id: 6, name: "Red", bg: "rgb(140, 20, 20)", text: "white", accent: "gray"},
