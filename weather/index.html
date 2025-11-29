@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" lang="en"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather - LucaPooka</title>
+    <link rel="stylesheet" href="../basic.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="../mii.png">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7936100714719113" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1>Weather</h1>
+    <input type="text" id="city" placeholder="Enter city name here">
+    <br>
+    <button id="get-weather" onclick="getWeather()">Get Weather</button>
+    <br>
+    <div>
+        <button class="day-change" onclick="dayChange(-2)">← Last Day</button>
+        <button class="day-change" onclick="dayChange(2)">Next Day →</button>
+    </div>
+    <div id="forecast">
+        <h2 id="high-low"></h2>
+        <div id="times-holder">
+            <div id="daytime" class="time-of-day">
+                <h3 class="time"></h3>
+                <h4 class="forecast"></h4>
+                <p class="detailed"></p>
+                <p class="precipitation"></p>
+                <p class="wind"></p>
+            </div>
+            <div id="nighttime" class="time-of-day">
+                <h3 class="time"></h3>
+                <h4 class="forecast"></h4>
+                <p class="detailed"></p>
+                <p class="precipitation"></p>
+                <p class="wind"></p>
+            </div>
+        </div>
+        <!--<p>Wind: ${first.windSpeed} ${first.windDirection}</p>-->
+    </div>
+    <footer>
+        <h2>Made by <a href="../">LucaPooka</a></h2>
+        <img src="../mii.png" alt="My Mii" height="50px" width="50px">
+    </footer>
+    <p id="footer-toggle">⌄</p>
+    <script src="script.js"></script>
+    <script type="module" src="../basic.js"></script>
+</body>
+</html>

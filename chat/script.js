@@ -6,6 +6,7 @@ const allChats = document.getElementById("all-chats");
 playerName.value = JSON.parse(localStorage.getItem("chat-name"));
 playerName.oninput = () => localStorage.setItem("chat-name", JSON.stringify(playerName.value));
 function fetchData() {
+    allChats.value = "Loading chats...";
     fetch(url + "/data")
         .then(response => response.json())
         .then(data => {

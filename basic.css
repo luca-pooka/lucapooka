@@ -48,6 +48,7 @@ summary {
     visibility: hidden;
 }
 #footer-toggle {
+    color: black;
     font-size: xxx-large;
     position: fixed;
     margin: 0;
