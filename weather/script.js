@@ -17,7 +17,7 @@ for (let index = 0; index < 7; index++) {
     button.className = `day day${index}`;
     if (index === 0) button.classList.add("selected");
     button.innerHTML = daysList[dayNumber];
-    button.onclick = () => daySet(dayNumber * 2);
+    button.onclick = () => daySet(index * 2);
     daysHolder.appendChild(button);
     console.log(daysList[dayNumber]);
 }

@@ -19,13 +19,13 @@
 #fruit {
     background-color: red;
 }
-#grid, #score, #pause, #replay {
+#grid, #score, #pause, #replay, #change {
     display: none;
 }
 button {
-    width: 150px;
-    height: 50px;
-    font-size: x-large;
+    width: 175px;
+    height: 45px;
+    font-size: larger;
     border-radius: 30px;
     cursor: pointer;
 }

@@ -1,10 +1,17 @@
 const grid = document.getElementById("grid");
 const scoreE = document.getElementById("score");
 const pause = document.getElementById("pause");
+const settings = document.getElementById("settings");
 const replay = document.getElementById("replay");
+const change = document.getElementById("change");
+const speedInput = document.getElementById("speed-input");
+const speedShow = document.getElementById("speed");
+const highScoreShow = document.getElementById("high-scores");
+const highScores = JSON.parse(localStorage.getItem("snake-high-scores")) || [0, 0, 0, 0];
 let speed = 200;
+highScoreShow.innerHTML = `High Score: ${highScores[1]}`;
 function startGame() {
-    document.getElementById("settings").style.display = "none";
+    settings.style.display = "none";
     scoreE.style.display = "block";
     pause.style.display = "block";
     let snakeLength = 1;
@@ -13,6 +20,7 @@ function startGame() {
     let justGotFruit = false;
     let score = 0;
     let paused = false;
+    let gameOver = false;
     function gameInterval() {
         let newX;
         let newY;
@@ -38,9 +46,7 @@ function startGame() {
                 }
             }
         });
-        if (snakeCount == 0) {
-            replay.style.display = "inline-block";
-        }
+        if (snakeCount == 0) setGameOver(interval);
         justGotFruit = false;
         grid.childNodes.forEach(newTile => {
             if (parseInt(newTile.classList[1].slice(1)) == newX && parseInt(newTile.classList[2].slice(1)) == newY) {
@@ -51,14 +57,23 @@ function startGame() {
                     scoreE.innerHTML = `Score: ${score}`;
                     placeFruit(newX + (14 - newY) * 15);
                 } else if (newTile.classList.contains("snake")) {
-                    clearInterval(interval);
-                    replay.style.display = "inline-block";
+                    setGameOver(interval);
                 }
                 newTile.classList.add("snake");
                 newTile.classList.add("head");
                 newTile.id = "1";
             }
         });
+    }
+    function setGameOver(interval) {
+        clearInterval(interval);
+        replay.style.display = "inline-block";
+        change.style.display = "inline-block";
+        gameOver = true;
+        if (score > highScores[speedInput.value - 1]) {
+            highScores[speedInput.value - 1] = score;
+            localStorage.setItem("snake-high-scores", JSON.stringify(highScores));
+        }
     }
     let interval = setInterval(gameInterval, speed);
     document.querySelector("body").onkeydown = event => {
@@ -67,7 +82,7 @@ function startGame() {
             yMovement.push(y);
         }
         const keys = {up: ["ArrowUp", "w", "W"], left: ["ArrowLeft", "a", "A"], down: ["ArrowDown", "s", "S"], right: ["ArrowRight", "d", "D"]}
-        if (event.key == "Escape") {
+        if (event.key == "Escape" && !gameOver) {
             if (paused) {
                 interval = setInterval(gameInterval, speed);
                 paused = false;
@@ -77,15 +92,17 @@ function startGame() {
                 pause.innerHTML = "Game paused";
                 paused = true;
             }
-        } else if (keys.up.includes(event.key) && yMovement[yMovement.length - 1] != -1) {
-            setMovement(0, 1); // move up
-        } else if (keys.left.includes(event.key) && xMovement[xMovement.length - 1] != 1) {
-            setMovement(-1, 0); // move left
-        } else if (keys.down.includes(event.key) && yMovement[yMovement.length - 1] != 1) {
-            setMovement(0, -1); // move down
-        } else if (keys.right.includes(event.key) && xMovement[xMovement.length - 1] != -1) {
-            setMovement(1, 0); // move right
-        }
+        } else if (!paused) {
+            if (keys.up.includes(event.key) && yMovement[yMovement.length - 1] != -1) {
+                setMovement(0, 1); // move up
+            } else if (keys.left.includes(event.key) && xMovement[xMovement.length - 1] != 1) {
+                setMovement(-1, 0); // move left
+            } else if (keys.down.includes(event.key) && yMovement[yMovement.length - 1] != 1) {
+                setMovement(0, -1); // move down
+            } else if (keys.right.includes(event.key) && xMovement[xMovement.length - 1] != -1) {
+                setMovement(1, 0); // move right
+            }
+        } 
     }
     function placeFruit(previous) {
         function getFruitLocation(previous) {
@@ -113,9 +130,29 @@ function startGame() {
     grid.children[109].id = "1";
     placeFruit(-1);
 }
+function reshowSettings() {
+    highScoreShow.innerHTML = `High Score: ${highScores[speedInput.value - 1]}`;
+    settings.style.display = "block";
+    scoreE.style.display = "none";
+    pause.style.display = "none";
+    replay.style.display = "none";
+    change.style.display = "none";
+    replayGame(false);
+}
+function replayGame(restart = true) {
+    // reset the game
+    while (grid.childElementCount > 0) {
+        grid.removeChild(grid.children[0]);
+    }
+    replay.style.display = "none";
+    change.style.display = "none";
+    scoreE.innerHTML = "Score: 0";
+    grid.style.display = "none";
+    // restart the game
+    if (restart) startGame();
+}
 function updateSpeed() {
-    const speedInput = document.getElementById("speed-input");
-    const speedShow = document.getElementById("speed");
     speedShow.innerHTML = speedInput.value == 1 ? "Speed: Slow" : speedInput.value == 2 ? "Speed: Normal" : speedInput.value == 3 ? "Speed: Fast" : "Speed: Super Fast";
-    speed = speedInput.value == 1 ? 225 : speedInput.value == 2 ? 175 : speedInput.value == 3 ? 125 : 90;
+    speed = speedInput.value == 1 ? 200 : speedInput.value == 2 ? 150 : speedInput.value == 3 ? 125 : 100;
+    highScoreShow.innerHTML = `High Score: ${highScores[speedInput.value - 1]}`;
 }
