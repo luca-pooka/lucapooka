@@ -16,10 +16,11 @@ const apps = [
     {name: "Person Sort", tags: ["Game", "Single Player", "Mobile-friendly"], link: "personsort/", info: "Sort different colored squares into their correct houses."},
     {name: "Chess", tags: ["Game", "Multiplayer", "Versus", "Mobile-friendly", "Beta"], link: "chess/", info: "Advance your pieces and try to checkmate (or capture in this version) the opponent's king."},
     {name: "Weather", tags: ["Tool", "Single Player", "Servers", "Mobile-friendly", "Beta", "New"], link: "weather/", info: "Find the weather for your area."},
-    {name: "Chat", tags: ["Tool", "Single Player", "Servers", "Mobile-friendly", "Beta", "New"], link: "chat/", info: "Chat with anyone online!<br><span style='font-size: 12px'>(this is basically just a test of my online servers)</span>"},
+    {name: "Chat", tags: ["Tool", "Single Player", "Servers", "Mobile-friendly", "Beta"], link: "chat/", info: "Chat with anyone online!<br><span style='font-size: 12px'>(this is basically just a test of my online servers)</span>"},
     {name: "Connect Four", tags: ["Game", "Multiplayer", "Versus", "Mobile-friendly", "Beta"], link: "connectfour/", info: "Try to get four of your color in a row before your opponent does."},
     {name: "Calculator", tags: ["Tool", "Single Player"], link: "calculator/", info: "It's a calculator, you can do your math homework or something."},
     {name: "To-Do List", tags: ["Tool", "Single Player", "Mobile-friendly", "Beta"], link: "todo/", info: "Put your tasks in and check them off when completed."},
+    {name: "Random Picker", tags: ["Tool", "Single Player", "Mobile-friendly", "New"], link: "randompicker/", info: "Unsure what to eat, play, or anything else? Put in options and let chance choose."},
     {name: "Random Number Gen", tags: ["Tool", "Single Player", "Mobile-friendly"], link: "rng/", info: "Get a random number from the range you pick."},
     {name: "Find your exact age", tags: ["Tool", "Single Player", "Mobile-friendly"], link: "exactage/", info: "Put in your date and time of birth, and you will be told exactly how old you are."},
     //{name: "Stair Stepper", tags: ["Game", "Single Player", "Multiplayer", "Versus", "Beta"], link: "stairstep/", info: "Don't choose the same thing as your opponents, or else you won't climb up. (Doesn't work)"}
