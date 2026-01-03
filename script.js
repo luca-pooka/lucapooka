@@ -1,5 +1,4 @@
 import { themes } from "./themes.js";
-console.log(themes);
 const apps = [
     {name: "Watamelon", tags: ["Unity", "Game", "Single Player", "The Best"], link: "watamelon/", info: "Combine fruits to get all the way to a watamelon and get a high score!"},
     {name: "Puzzle Platform", tags: ["Unity", "Game", "Single Player", "The Best"], link: "puzzleplatform/", info: "Progress through levels in this 2D platformer puzzle game."},
@@ -19,6 +18,7 @@ const apps = [
     {name: "Chat", tags: ["Tool", "Single Player", "Servers", "Mobile-friendly", "Beta"], link: "chat/", info: "Chat with anyone online!<br><span style='font-size: 12px'>(this is basically just a test of my online servers)</span>"},
     {name: "Connect Four", tags: ["Game", "Multiplayer", "Versus", "Mobile-friendly", "Beta"], link: "connectfour/", info: "Try to get four of your color in a row before your opponent does."},
     {name: "Calculator", tags: ["Tool", "Single Player"], link: "calculator/", info: "It's a calculator, you can do your math homework or something."},
+    {name: "Countdowns", tags: ["Tool", "Single Player", "Mobile-friendly", "Beta", "New"], link: "countdowns/", info: "Count down to your birthday, Christmas, or anything else."},
     {name: "To-Do List", tags: ["Tool", "Single Player", "Mobile-friendly", "Beta"], link: "todo/", info: "Put your tasks in and check them off when completed."},
     {name: "Random Picker", tags: ["Tool", "Single Player", "Mobile-friendly", "New"], link: "randompicker/", info: "Unsure what to eat, play, or anything else? Put in options and let chance choose."},
     {name: "Random Number Gen", tags: ["Tool", "Single Player", "Mobile-friendly"], link: "rng/", info: "Get a random number from the range you pick."},

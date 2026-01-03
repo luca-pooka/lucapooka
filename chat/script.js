@@ -1,5 +1,5 @@
-//const url = "http://localhost:3000";
-const url = "https://lucapooka.onrender.com";
+const url = "http://localhost:3000";
+//const url = "https://lucapooka.onrender.com";
 const playerText = document.getElementById("words");
 const playerName = document.getElementById("name");
 const allChats = document.getElementById("all-chats");
@@ -7,7 +7,7 @@ playerName.value = JSON.parse(localStorage.getItem("chat-name"));
 playerName.oninput = () => localStorage.setItem("chat-name", JSON.stringify(playerName.value));
 function fetchData() {
     allChats.value = "Loading chats...";
-    fetch(url + "/data")
+    fetch(url + "/chat/data")
         .then(response => response.json())
         .then(data => {
             allChats.value = "";
@@ -24,7 +24,7 @@ async function sendMessage() {
     const words = playerText.value;
     const name = playerName.value;
     playerText.value = "";
-    const response = await fetch(url + "/add", {
+    const response = await fetch(url + "/chat/add", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, words })

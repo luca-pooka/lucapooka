@@ -1,0 +1,15 @@
+#grid {
+    display: grid;
+    grid-template: repeat(20, 30px) / repeat(10, 30px);
+    max-height: 100vh;
+}
+.tile {
+    background-color: darkgray;
+    border: 1px solid black;
+}
+.block {
+    background-color: red;
+}
+.falling {
+    background-color: orange;
+}
