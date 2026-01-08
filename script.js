@@ -1,6 +1,6 @@
 import { themes } from "./themes.js";
 const apps = [
-    {name: "Watamelon", tags: ["Unity", "Game", "Single Player", "The Best"], link: "watamelon/", info: "Combine fruits to get all the way to a watamelon and get a high score!"},
+    {name: "Watamelon", tags: ["Unity", "Game", "Servers", "Single Player", "The Best"], link: "watamelon/", info: "Combine fruits to get all the way to a watamelon and get a high score!"},
     {name: "Puzzle Platform", tags: ["Unity", "Game", "Single Player", "The Best"], link: "puzzleplatform/", info: "Progress through levels in this 2D platformer puzzle game."},
     {name: "Pong", tags: ["Unity", "Game", "Multiplayer", "Co-op", "Versus", "The Best"], link: "pong/", info: "Go against another player in the classic game of hitting a ball back and forth!"},
     {name: "Super Tic Tac Toe", tags: ["Game", "Multiplayer", "Versus", "The Best", "Mobile-friendly"], link: "supertictactoe/", info: "Play games of Tic Tac Toe, and try to get three games won in a row."},
@@ -14,8 +14,8 @@ const apps = [
     {name: "Synchrony", tags: ["Game", "Multiplayer", "Co-op"], link: "synchrony/", info: "See if you would answer the same as your teammate. How in sync are you two?"},
     {name: "Person Sort", tags: ["Game", "Single Player", "Mobile-friendly"], link: "personsort/", info: "Sort different colored squares into their correct houses."},
     {name: "Chess", tags: ["Game", "Multiplayer", "Versus", "Mobile-friendly", "Beta"], link: "chess/", info: "Advance your pieces and try to checkmate (or capture in this version) the opponent's king."},
-    {name: "Weather", tags: ["Tool", "Single Player", "Servers", "Mobile-friendly", "Beta", "New"], link: "weather/", info: "Find the weather for your area."},
-    {name: "Chat", tags: ["Tool", "Single Player", "Servers", "Mobile-friendly", "Beta"], link: "chat/", info: "Chat with anyone online!<br><span style='font-size: 12px'>(this is basically just a test of my online servers)</span>"},
+    {name: "Weather", tags: ["Tool", "Servers", "Single Player", "Mobile-friendly", "Beta", "New"], link: "weather/", info: "Find the weather for your area."},
+    {name: "Chat", tags: ["Tool", "Servers", "Single Player", "Mobile-friendly", "Beta"], link: "chat/", info: "Chat with anyone online!<br><span style='font-size: 12px'>(this is basically just a test of my online servers)</span>"},
     {name: "Connect Four", tags: ["Game", "Multiplayer", "Versus", "Mobile-friendly", "Beta"], link: "connectfour/", info: "Try to get four of your color in a row before your opponent does."},
     {name: "Calculator", tags: ["Tool", "Single Player"], link: "calculator/", info: "It's a calculator, you can do your math homework or something."},
     {name: "Countdowns", tags: ["Tool", "Single Player", "Mobile-friendly", "Beta", "New"], link: "countdowns/", info: "Count down to your birthday, Christmas, or anything else."},
