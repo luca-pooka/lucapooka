@@ -4,7 +4,7 @@ const apps = [
     {name: "Puzzle Platform", tags: ["Unity", "Game", "Single Player", "The Best"], link: "puzzleplatform/", info: "Progress through levels in this 2D platformer puzzle game."},
     {name: "Pong", tags: ["Unity", "Game", "Multiplayer", "Co-op", "Versus", "The Best"], link: "pong/", info: "Go against another player in the classic game of hitting a ball back and forth!"},
     {name: "Super Tic Tac Toe", tags: ["Game", "Multiplayer", "Versus", "The Best", "Mobile-friendly"], link: "supertictactoe/", info: "Play games of Tic Tac Toe, and try to get three games won in a row."},
-    {name: "War", tags: ["Game", "Multiplayer", "Versus"], link: "war/", info: "Go against a friend in the classic game of war, choosing between reload, shoot, shield, and reflect."},
+    {name: "War", tags: ["Game", "Single Player", "Multiplayer", "Versus"], link: "war/", info: "Go against a friend in the classic game of war, choosing between reload, shoot, shield, and reflect."},
     {name: "Blackjack", tags: ["Game", "Single Player", "Mobile-friendly"], link: "blackjack/", info: "Bet your money and try to make it big without going over 21."},
     {name: "Life Simulator", tags: ["Game", "Single Player", "The Best", "Mobile-friendly"], link: "lifesim/", info: "Create people you know in real life, solve their problems, and care for them."},
     {name: "Snake", tags: ["Game", "Single Player"], link: "snake/", info: "Move around collecting fruit to grow and get a high score in this classic game."},
@@ -14,13 +14,13 @@ const apps = [
     {name: "Synchrony", tags: ["Game", "Multiplayer", "Co-op"], link: "synchrony/", info: "See if you would answer the same as your teammate. How in sync are you two?"},
     {name: "Person Sort", tags: ["Game", "Single Player", "Mobile-friendly"], link: "personsort/", info: "Sort different colored squares into their correct houses."},
     {name: "Chess", tags: ["Game", "Multiplayer", "Versus", "Mobile-friendly", "Beta"], link: "chess/", info: "Advance your pieces and try to checkmate (or capture in this version) the opponent's king."},
-    {name: "Weather", tags: ["Tool", "Servers", "Single Player", "Mobile-friendly", "Beta", "New"], link: "weather/", info: "Find the weather for your area."},
-    {name: "Chat", tags: ["Tool", "Servers", "Single Player", "Mobile-friendly", "Beta"], link: "chat/", info: "Chat with anyone online!<br><span style='font-size: 12px'>(this is basically just a test of my online servers)</span>"},
+    {name: "Weather", tags: ["Tool", "Servers", "Single Player", "Mobile-friendly"], link: "weather/", info: "Find the weather for your area."},
+    {name: "Chat", tags: ["Tool", "Servers", "Single Player", "Mobile-friendly"], link: "chat/", info: "Chat with anyone online!<br><span style='font-size: 12px'>(this is basically just a test of my online servers)</span>"},
     {name: "Connect Four", tags: ["Game", "Multiplayer", "Versus", "Mobile-friendly", "Beta"], link: "connectfour/", info: "Try to get four of your color in a row before your opponent does."},
     {name: "Calculator", tags: ["Tool", "Single Player"], link: "calculator/", info: "It's a calculator, you can do your math homework or something."},
-    {name: "Countdowns", tags: ["Tool", "Single Player", "Mobile-friendly", "Beta", "New"], link: "countdowns/", info: "Count down to your birthday, Christmas, or anything else."},
+    {name: "Countdowns", tags: ["Tool", "Single Player", "Mobile-friendly", "Beta"], link: "countdowns/", info: "Count down to your birthday, Christmas, or anything else."},
     {name: "To-Do List", tags: ["Tool", "Single Player", "Mobile-friendly", "Beta"], link: "todo/", info: "Put your tasks in and check them off when completed."},
-    {name: "Random Picker", tags: ["Tool", "Single Player", "Mobile-friendly", "New"], link: "randompicker/", info: "Unsure what to eat, play, or anything else? Put in options and let chance choose."},
+    {name: "Random Picker", tags: ["Tool", "Single Player", "Mobile-friendly"], link: "randompicker/", info: "Unsure what to eat, play, or anything else? Put in options and let chance choose."},
     {name: "Random Number Gen", tags: ["Tool", "Single Player", "Mobile-friendly"], link: "rng/", info: "Get a random number from the range you pick."},
     {name: "Find your exact age", tags: ["Tool", "Single Player", "Mobile-friendly"], link: "exactage/", info: "Put in your date and time of birth, and you will be told exactly how old you are."},
     //{name: "Stair Stepper", tags: ["Game", "Single Player", "Multiplayer", "Versus", "Beta"], link: "stairstep/", info: "Don't choose the same thing as your opponents, or else you won't climb up. (Doesn't work)"}
@@ -41,15 +41,13 @@ const tags = [
     {n: "New", t: "New projects.", src: "new.png"}
 ];
 const appsDiv = document.getElementById("apps");
-const checkboxes = document.getElementById("checkboxes");
+const tagsDiv = document.getElementById("tags");
 let selectedApps = apps;
 tags.forEach(tag => {
-    const img = document.createElement("img");
-    img.src = `icons/default/${tag.src}`;
-    img.alt = tag.n;
-    img.title = `${tag.n} Tag:\n${tag.t}`;
-    img.className = "tag-img";
-    img.onclick = () => {
+    const tagDiv = document.createElement("div");
+    tagDiv.className = "tag-div";
+    tagDiv.title = `${tag.n} Tag:\n${tag.t}`;
+    tagDiv.onclick = () => {
         if (img.classList.contains("selected")) {
             img.src = img.src.replace("selected", "default");
             img.classList.remove("selected");
@@ -59,11 +57,20 @@ tags.forEach(tag => {
         }
         createApps();
     }
+    const img = document.createElement("img");
+    img.src = `icons/default/${tag.src}`;
+    img.alt = tag.n;
+    img.className = "tag-img";
     if (tag.n === "Mobile-friendly" && /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
         img.src = img.src.replace("default", "selected");
         img.classList.add("selected");
     }
-    checkboxes.appendChild(img);
+    const tagTitle = document.createElement("p");
+    tagTitle.innerHTML = tag.n;
+    tagTitle.className = "tag-p";
+    tagDiv.appendChild(img);
+    tagDiv.appendChild(tagTitle);
+    tagsDiv.appendChild(tagDiv);
 });
 function createApps() {
     const conditions = [];

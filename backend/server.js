@@ -45,7 +45,11 @@ app.post("/chat/add", (req, res) => {
 });
 
 app.get("/watamelon/scores", (req, res) => {
-    watamelonPool.query("SELECT * FROM scores ORDER BY score DESC", (err, results) => {
+    const possibleSorts = ["score DESC", "score ASC", "time_created DESC", "time_created ASC", "name ASC", "name DESC"];
+    let sortBy = req.query.sort;
+    if (!possibleSorts.includes(sortBy)) sortBy = possibleSorts[0];
+    // this "hard coding" is so no bad sql injections can happen or so it can't be sorted by a "nonsense" value which would cause errors
+    watamelonPool.query(`SELECT * FROM scores ORDER BY ${sortBy}`, (err, results) => {
         if (err) return res.status(500).json({ error: err.message });
         res.json(results);
     });
