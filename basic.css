@@ -41,6 +41,9 @@ footer h2 {
 summary {
     cursor: pointer;
 }
+#main {
+    display: flex;
+}
 .invisible {
     opacity: 0;
 }

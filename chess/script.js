@@ -21,8 +21,8 @@ function addImg(pieceName) {
     img.className = "piece";
     img.src = piecesImgs[pieceName];
     img.alt = pieceName;
-    img.height = 70;
-    img.width = 70;
+    /*img.height = 70;
+    img.width = 70;*/
     return img;
 }
 function movePiece(grayTilePos) {

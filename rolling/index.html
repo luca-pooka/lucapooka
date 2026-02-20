@@ -11,34 +11,34 @@
 </head>
 <body>
     <h1>Rolling</h1>
-    <div>
-        <h2 id="roll-gotten"></h2>
-        <h4 id="roll-percent"></h4>
+    <div id="main">
+        <div id="content">
+            <div>
+                <h2 id="roll-gotten"></h2>
+                <h4 id="roll-percent"></h4>
+            </div>
+            <button id="roll" onclick="roll()">ROLL</button>
+            <h3>Money: $<span id="money">0</span></h3>
+            <div id="shop">
+                <h3></h3>
+                <p></p>
+                <button>Buy</button>
+            </div>
+            <br>
+            <br>
+            <details id="items">
+                <summary id="items-summary">Your Items (0/10)</summary>
+            </details>
+            <br>
+            <br>
+            <details id="catalogue">
+                <summary id="catalogue-summary">Your Catalogue (0/15)</summary>
+            </details>
+            <br>
+            <p id="rolled">Total times rolled: 0</p>
+            <button id="delete" onclick="deleteData()">DELETE SAVE DATA</button>
+        </div>
     </div>
-    <button id="roll" onclick="roll()">ROLL</button>
-    <h3>Money: $<span id="money">0</span></h3>
-    <div id="shop">
-        <h3></h3>
-        <p></p>
-        <button>Buy</button>
-    </div>
-    <br>
-    <br>
-    <details id="items">
-        <summary id="items-summary">Your Items (0/10)</summary>
-    </details>
-    <br>
-    <br>
-    <details id="catalogue">
-        <summary id="catalogue-summary">Your Catalogue (0/15)</summary>
-    </details>
-    <br>
-    <p id="rolled">Total times rolled: 0</p>
-    <input id="code" placeholder="Input code">
-    <br>
-    <button onclick="submitCode()">Submit</button>
-    <br>
-    <button id="delete" onclick="deleteData()">DELETE SAVE DATA</button>
     <footer>
         <h2>Made by <a href="../">LucaPooka</a></h2>
         <img src="../mii.png" alt="My Mii" height="50px" width="50px">

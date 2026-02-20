@@ -1,7 +1,7 @@
 header h2 {
     display: inline;
 }
-#player-cards, #dealer-cards, div div {
+#player-cards, #dealer-cards, #player-cards div, #dealer-cards div {
     background-color: rgb(190, 190, 190);
     color: black;
     border: 3px solid var(--text);
@@ -10,7 +10,7 @@ header h2 {
     padding: 10px;
     margin: 0 auto;
 }
-div div { /* card */
+#player-cards div, #dealer-cards div { /* card */
     background-color: rgb(200, 200, 200);
     display: inline-block;
     margin: 5px;

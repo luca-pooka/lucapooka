@@ -155,7 +155,7 @@ setInterval(() => {
     if (movementSpeed > 300) {
         movementSpeed -= 2;
     }
-    document.getElementById("creation-speed").innerHTML = creationSpeed;
-    document.getElementById("movement-speed").innerHTML = movementSpeed;
+    // document.getElementById("creation-speed").innerHTML = creationSpeed;
+    // document.getElementById("movement-speed").innerHTML = movementSpeed;
 }, 1000);
 makeRandomTile();

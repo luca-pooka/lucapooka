@@ -16,37 +16,61 @@
         <h2 id="bet-show">Bet: $0</h2>
     </header>
     <br>
-    <div id="bet-div">
-        <button onclick="betAll()" id="all" title="Bet all of your money">ALL OR NOTHING</button>
-        or
-        <input type="number" id="bet-input" placeholder="$ to bet" size="1">
-        <button onclick="checkBet()" id="bet">Place Bet</button>
+    <div id="main">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7936100714719113"
+            crossorigin="anonymous"></script>
+        <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-format="autorelaxed"
+            data-ad-client="ca-pub-7936100714719113"
+            data-ad-slot="1684020555"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        <div>
+            <div id="bet-div">
+                <button onclick="betAll()" id="all" title="Bet all of your money">ALL OR NOTHING</button>
+                or
+                <input type="number" id="bet-input" placeholder="$ to bet" size="1">
+                <button onclick="checkBet()" id="bet">Place Bet</button>
+            </div>
+            <div>
+                <button onclick="hit()" id="hit">Hit</button>
+                <button onclick="stand()" id="stand">Stand</button>
+                <button onclick="doubleDown()" id="double-down">Double Down!</button>
+            </div>
+            <br>
+            <div id="dealer-cards">
+                <h3>Dealer's Cards</h3>
+                <h4 id="dealer-value">Value: 0</h4>
+            </div>
+            <br>
+            <div id="player-cards">
+                <h3>Your Cards</h3>
+                <h4 id="player-value">Value: 0</h4>
+            </div>
+            <br>
+            <div>
+                <h3 id="high-score">Your High Score: $1000</h3>
+                <h3 id="low-score">Your Low Score: $1000</h3>
+            </div>
+            <details>
+                <summary>Basic Blackjack Rules</summary>
+                <p>Try to get a value of cards closer to 21 than the dealer without going over.</p>
+                <p>If you win, you gain the amount you bet and if you lose, you lose the amount you bet.</p>
+            </details>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7936100714719113"
+            crossorigin="anonymous"></script>
+        <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-format="autorelaxed"
+            data-ad-client="ca-pub-7936100714719113"
+            data-ad-slot="1684020555"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
     </div>
-    <div>
-        <button onclick="hit()" id="hit">Hit</button>
-        <button onclick="stand()" id="stand">Stand</button>
-        <button onclick="doubleDown()" id="double-down">Double Down!</button>
-    </div>
-    <br>
-    <div id="dealer-cards">
-        <h3>Dealer's Cards</h3>
-        <h4 id="dealer-value">Value: 0</h4>
-    </div>
-    <br>
-    <div id="player-cards">
-        <h3>Your Cards</h3>
-        <h4 id="player-value">Value: 0</h4>
-    </div>
-    <br>
-    <div>
-        <h3 id="high-score">Your High Score: $1000</h3>
-        <h3 id="low-score">Your Low Score: $1000</h3>
-    </div>
-    <details>
-        <summary>Basic Blackjack Rules</summary>
-        <p>Try to get a value of cards closer to 21 than the dealer without going over.</p>
-        <p>If you win, you gain the amount you bet and if you lose, you lose the amount you bet.</p>
-    </details>
     <footer>
         <h2>Made by <a href="../">LucaPooka</a></h2>
         <img src="../mii.png" alt="My Mii" height="50px" width="50px">

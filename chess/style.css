@@ -1,8 +1,12 @@
 #board {
     display: grid;
-    grid-template: repeat(8, 90px) / repeat(8, 90px);
+    grid-template: repeat(8, 80px) / repeat(8, 80px);
     text-align: center;
     background-color: black;
+}
+img {
+    width: 60px;
+    height: 60px;
 }
 .tile {
     background-color: darkolivegreen;

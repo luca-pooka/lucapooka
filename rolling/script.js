@@ -61,6 +61,7 @@ for (let index = 0; index < 10; index++) {
     rollChance /= 2;
 }*/
 const body = document.querySelector("body");
+const content = document.getElementById("content");
 // cw = completely works
 let items = getItem("rolling-items") || []; // cw
 let timer = getItem("rolling-time"); // cw
@@ -104,7 +105,7 @@ if (itemUsed !== null && items.includes(itemUsed)) {
 const moneyElement = document.getElementById("money");
 const shop = document.getElementById("shop");
 const timeLeft = document.createElement("p");
-body.insertBefore(timeLeft, shop);
+content.insertBefore(timeLeft, shop);
 const timesRolledElement = document.getElementById("rolled");
 const updateTimesRolled = () => timesRolledElement.innerHTML = `Total times rolled: ${timesRolled}`;
 updateTimesRolled();
@@ -203,7 +204,8 @@ function updateShop() {
             });
         }
     } catch (TypeError) {
-        body.removeChild(shop);
+        content.removeChild(shop);
+        console.log("shop removed");
     }
 }
 //let gotGoodThing = false;
@@ -239,7 +241,7 @@ function roll() {
                 const saveQuestion = document.createElement("h3");
                 saveQuestion.innerHTML = "Save this item?";
                 const removeDiv = () => {
-                    body.removeChild(saveDiv); 
+                    content.removeChild(saveDiv); 
                     done = true;
                 }
                 const saveButton = document.createElement("button");
@@ -267,7 +269,7 @@ function roll() {
                 saveDiv.appendChild(saveQuestion);
                 saveDiv.appendChild(saveButton);
                 saveDiv.appendChild(sellButton);
-                body.insertBefore(saveDiv, moneyElement.parentElement);
+                content.insertBefore(saveDiv, moneyElement.parentElement);
                 updateYourCatalogue();
                 return;
             }
@@ -286,16 +288,6 @@ function roll() {
 setInterval(() => {
     autoroll();
 }, 0);*/
-function submitCode() {
-    if (document.getElementById("code").value === "SigmAboY564") {
-        money += 10000;
-        updateYourItems();
-    }
-    if (document.getElementById("code").value === "DONT DO IT") {
-        money -= 10000;
-        updateYourItems();
-    }
-}
 setInterval(() => {
     timer = getItem("rolling-time");
     difference = Date.now() - timer;
