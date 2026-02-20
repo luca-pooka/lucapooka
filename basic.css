@@ -43,6 +43,16 @@ summary {
 }
 #main {
     display: flex;
+    gap: 5vw;
+    justify-content: center;
+    width: 100vw;
+}
+.vertical-ad {
+    /* background-color: red; */ /* used for testing to see where ad would go */
+    width: 20vw;
+}
+.horizontal-ad {
+    width: 100vw;
 }
 .invisible {
     opacity: 0;
