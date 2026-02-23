@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" lang="en"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LucaPooka Hub</title>
+    <title>LucaPooka - Hub</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="basic.css">
     <link rel="icon" href="mii.png">
@@ -15,8 +15,18 @@
     <img src="mii.png" alt="Image of my (Luca's) Mii" height="85px" width="85px" title="it's mii!">
     <br>
     <div id="checkboxes">
+        <div id="order-container">
+            <label for="order-select">Order projects by:</label>
+            <select name="order" id="order-select">
+                <option value="default">Default Order</option>
+                <option value="newest">Newest to Oldest</option>
+                <option value="oldest">Oldest to Newest</option>
+                <option value="alphabetical-asc">Alphabetical Ascending</option>
+                <option value="alphabetical-desc">Alphabetical Descending</option>
+            </select>
+        </div>
         <h3>Tags:</h3>
-        <h4>(hover each icon for info, click on them to filter by)</h4>
+        <p>(hover each icon for info, click on them to filter by)</p>
         <div id="tags"></div>
     </div>
     <div id="apps"></div>

@@ -25,10 +25,10 @@ h1 {
         max-height: 275px;
     }
 }
-.app h2 {
+.title {
     font-size: 28px;
 }
-.app a {
+.link {
     color: white;
     background-color: rgb(100, 100, 100);
     display: inline-block;
@@ -38,18 +38,22 @@ h1 {
     margin: 10px;
     transition: transform 500ms; /* doesn't work for some reason <:/ */
 }
-.app a:hover {
+.link:hover {
     color: lightgray;
     background-color: rgb(120, 120, 120);
     transform: scale(1.05);
 }
-.app p {
+.description {
     color: lightgray;
 }
-.app p, .app a {
+.description, .link {
     visibility: hidden;
     opacity: 0;
     transition: opacity 500ms;
+}
+.date-added {
+    color: rgb(190, 190, 190);
+    text-align: right;
 }
 .app:hover p, .app:hover a {
     visibility: visible;
@@ -58,10 +62,21 @@ h1 {
 #checkboxes {
     background-color: darkgray;
     color: black;
+    position: relative;
     padding: 10px;
     border: 3px solid var(--text);
     box-shadow: 0 4px 8px var(--box-shadow);
     border-radius: 20px;
+}
+#checkboxes > h3 {
+    margin: 10px 0;
+}
+#checkboxes > p {
+    margin: 10px;
+}
+#order-container {
+    position: absolute;
+    right: 5%;
 }
 #tags {
     display: flex;
@@ -163,7 +178,7 @@ tr:nth-child(even) {
     .app {
         max-height: max-content;
     }
-    .app p, .app a {
+    .description, .link {
         visibility: visible;
         opacity: 1;
         transition: none;

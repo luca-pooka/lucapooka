@@ -90,16 +90,16 @@ function tileClicked(stileElement, numberClicked) {
             turn = "";
         }
         if (numberNeeded == -1) {
-            tutorialShown.innerHTML = `The last other player's last move targeted a grid that is full, so you can place your ${turn} anywhere in any grid!`;
+            tutorialShown.innerHTML = `The other player's last move targeted a grid that is full, so you can place your ${turn} on any grid space!`;
         } else {
-            tutorialShown.innerHTML = `Since the last other player's last move was in the ${numToPos[numberNeeded]} box of their grid, you have to place your ${turn} anywhere in the ${numToPos[numberNeeded]} grid, which is highlighted in a light gray.`;
+            tutorialShown.innerHTML = `Since the other player's last move was in the ${numToPos[numberNeeded]} box of their grid, your ${turn} must be placed in the highlighted ${numToPos[numberNeeded]} grid space.`;
         }
         turnShown.innerHTML = `${turn}'s Turn!`;
         for (let index = 0; index < board.childElementCount; index++) {
             if (numberNeeded == board.children[index].className || numberNeeded == -1) {
-                board.children[index].style.backgroundColor = "grey";
+                board.children[index].style.backgroundColor = "rgb(180, 180, 180)";
             } else {
-                board.children[index].style.backgroundColor = "RGB(50, 50, 50)";
+                board.children[index].style.backgroundColor = "rgb(50, 50, 50)";
             }
         }
     } else {
