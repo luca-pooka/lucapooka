@@ -2,7 +2,7 @@ import { themes } from "./themes.js";
 // "apps" have been renamed to "projects" but i'm not changing them here because it doesn't matter
 const apps = [
     {name: "Watamelon", tags: ["Unity", "Game", "Servers", "Single Player", "The Best"], link: "watamelon/", info: "Combine fruits to get all the way to a watamelon and get a high score!", date: "February 2025", order: 13},
-    {name: "Puzzle Platform", tags: ["Unity", "Game", "Single Player", "The Best"], link: "puzzleplatform/", info: "Progress through levels in this 2D platformer puzzle game.", date: "September 2025", order: 18},
+    {name: "Puzzle Platform", tags: ["Unity", "Game", "Single Player", "The Best"], link: "puzzleplatform/", info: "Progress through levels in this 2D platformer puzzle game.", date: "September 2025", order: 18, recentUpdate: true},
     {name: "Pong", tags: ["Unity", "Game", "Multiplayer", "Co-op", "Versus", "The Best"], link: "pong/", info: "Go against another player in the classic game of hitting a ball back and forth!", date: "March 2025; Idea by Jacob", order: 14},
     {name: "Blackjack", tags: ["Game", "Single Player", "Mobile-friendly"], link: "blackjack/", info: "Bet your money and try to make it big without going over 21.", date: "August 2024", order: 3},
     {name: "Super Tic Tac Toe", tags: ["Game", "Multiplayer", "Versus", "The Best", "Mobile-friendly"], link: "supertictactoe/", info: "Play games of Tic Tac Toe, and try to get three games won in a row.", date: "August 2024", order: 1},
@@ -119,6 +119,12 @@ function createApps() {
             tagsDiv.appendChild(img);
         });
         square.appendChild(tagsDiv);
+        if (app.recentUpdate) {
+            const recentUpdate = document.createElement("p");
+            recentUpdate.innerHTML = "Recently Updated!";
+            recentUpdate.className = "recent-update";
+            square.appendChild(recentUpdate);
+        }
         const description = document.createElement("p");
         description.innerHTML = app.info;
         description.className = "description";

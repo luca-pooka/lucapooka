@@ -28,6 +28,10 @@ h1 {
 .title {
     font-size: 28px;
 }
+.recent-update {
+    color: yellow;
+    margin: 5px 0 -10px 0;
+}
 .link {
     color: white;
     background-color: rgb(100, 100, 100);
